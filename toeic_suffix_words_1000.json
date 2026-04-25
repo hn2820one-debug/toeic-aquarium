@@ -1,0 +1,5002 @@
+[
+  {
+    "word": "information",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "situation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "decision",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "discussion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "population",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "solution",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "happiness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "darkness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "weakness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "awareness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "fitness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "development",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "environment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "government",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "agreement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "investment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "ability",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "security",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "reality",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "society",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "safety",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "friendship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "relationship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "leadership",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "childhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "neighborhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "importance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "performance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "difference",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "independence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "realize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "recognize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "apologize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "organize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "memorize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "identify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "justify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "clarify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "satisfy",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "classify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "create",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "evaluate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "investigate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "calculate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "communicate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "happen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "threaten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "strengthen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "widen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "deepen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "beautiful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "successful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "useful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "helpful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "powerful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "hopeless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "homeless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "careless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "useless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "endless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "dangerous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "nervous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "various",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "famous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "obvious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "effective",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "active",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "expensive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "attractive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "creative",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "available",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "comfortable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "valuable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "impossible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "responsible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "national",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "personal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "traditional",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "economic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "historic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "quickly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "exactly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "suddenly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "probably",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "completely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "recently",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "especially",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "finally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "simply",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "easily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "forward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "backward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "afterwards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "upward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "otherwise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "likewise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "clockwise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "action",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "cation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "lotion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "mation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "motion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "nation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "notion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "option",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "potion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "ration",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "auction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "bastion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "caption",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "caution",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "diction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "edition",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "elation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "emotion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "emption",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "faction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "fiction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "martion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "mention",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "oration",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "ovation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "portion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "section",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "station",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "suction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "tuition",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "ablation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "ablution",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "abortion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "addition",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "adoption",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "ambition",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "audition",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "aviation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "citation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "creation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "deletion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "demotion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "devotion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "dilation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "dilution",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "donation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "duration",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "ejection",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "election",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "equation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "erection",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "eruption",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "eviction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "exaction",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "exertion",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "fixation",
+    "pos": "Noun",
+    "suffix": "-tion"
+  },
+  {
+    "word": "fusion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "lesion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "pasion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "vision",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "erosion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "evasion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "fission",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "hession",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "mansion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "mission",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "passion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "pension",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "session",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "suasion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "tension",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "torsion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "version",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "abrasion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "adhesion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "allusion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "aversion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "cohesion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "delusion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "derision",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "division",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "emission",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "emulsion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "envision",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "excision",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "illusion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "incision",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "infusion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "invasion",
+    "pos": "Noun",
+    "suffix": "-sion"
+  },
+  {
+    "word": "ament",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "arment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "aument",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "bement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "cement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "dement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "dyment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "foment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "lament",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "moment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "osment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "ozment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "ailment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "augment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "clement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "comment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "element",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "ferment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "figment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "garment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "klement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "kliment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "norment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "payment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "pigment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "rayment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "segment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "torment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "arcement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "argument",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "armament",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "basement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "dearment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "document",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "easement",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "filament",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "fragment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "gourment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "judgment",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "ligament",
+    "pos": "Noun",
+    "suffix": "-ment"
+  },
+  {
+    "word": "kness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "inness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "lyness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "maness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "urness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "vaness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "badness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "bigness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "burness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "cavness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "dryness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "fadness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "forness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "furness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "gayness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "guiness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "harness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "henness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "holness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "illness",
+    "pos": "Noun",
+    "suffix": "-ness"
+  },
+  {
+    "word": "amity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "baity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "deity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "hoity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "laity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "toity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "ugity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "unity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "acuity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "cavity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "comity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "darity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "dority",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "enmity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "entity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "equity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "fruity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "garity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "laxity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "levity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "nudity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "oddity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "parity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "polity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "purity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "rarity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "sanity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "uppity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "vanity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "varity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "verity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "acidity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "agility",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "amenity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "annuity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "brevity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "cassity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "charity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "clarity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "density",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "dignity",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "duality",
+    "pos": "Noun",
+    "suffix": "-ity"
+  },
+  {
+    "word": "batty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "beaty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "berty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "betty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "bitty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "booty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "busty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "canty",
+    "pos": "Noun",
+    "suffix": "-ty"
+  },
+  {
+    "word": "airship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "gunship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "kinship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "manship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "warship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "winship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "worship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "flagship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "hardship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "headship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "kingship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "lordship",
+    "pos": "Noun",
+    "suffix": "-ship"
+  },
+  {
+    "word": "lahood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "mahood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "boyhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "manhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "moshood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "orahood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "babyhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "girlhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "nearhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "adulthood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "falsehood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "robinhood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "sainthood",
+    "pos": "Noun",
+    "suffix": "-hood"
+  },
+  {
+    "word": "dance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "hance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "lance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "mance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "nance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "rance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "vance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "chance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "crance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "fiance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "france",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "glance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "nuance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "prance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "seance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "stance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "trance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "advance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "askance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "balance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "enhance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "finance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "lorance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "mccance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "palance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "penance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "romance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "abeyance",
+    "pos": "Noun",
+    "suffix": "-ance"
+  },
+  {
+    "word": "bence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "fence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "hence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "pence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "agence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "spence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "thence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "whence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "absence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "cadence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "defence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "dolence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "essence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "ference",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "licence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "lorence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "science",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "silence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "terence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "valence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "ambience",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "audience",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "clarence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "clemence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "commence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "credence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "currence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "durrence",
+    "pos": "Noun",
+    "suffix": "-ence"
+  },
+  {
+    "word": "aaker",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "abler",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "acker",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "adder",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "adger",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "adler",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "after",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "agler",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "agner",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "ahner",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "alber",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "alder",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "alger",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "aller",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "almer",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "alper",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "alter",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "amber",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "ander",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "anger",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "anker",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "apter",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "armer",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "arner",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "arter",
+    "pos": "Noun",
+    "suffix": "-er"
+  },
+  {
+    "word": "abhor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "accor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "achor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "actor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "agnor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "ailor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "allor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "amcor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "arbor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "ardor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "armor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "astor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "atcor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "aylor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "bator",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "becor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "bloor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "bogor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "bokor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "calor",
+    "pos": "Noun",
+    "suffix": "-or"
+  },
+  {
+    "word": "achee",
+    "pos": "Noun",
+    "suffix": "-ee"
+  },
+  {
+    "word": "acree",
+    "pos": "Noun",
+    "suffix": "-ee"
+  },
+  {
+    "word": "agree",
+    "pos": "Noun",
+    "suffix": "-ee"
+  },
+  {
+    "word": "ailee",
+    "pos": "Noun",
+    "suffix": "-ee"
+  },
+  {
+    "word": "aimee",
+    "pos": "Noun",
+    "suffix": "-ee"
+  },
+  {
+    "word": "cable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "fable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "gable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "hable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "kable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "mable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "sable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "table",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "anable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "arable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "crable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "doable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "enable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "frable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "grable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "knable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "liable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "stable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "unable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "usable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "viable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "affable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "amiable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "annable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "capable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "conable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "curable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "disable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "durable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "eatable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "equable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "fixable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "likable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "livable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "lovable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "marable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "movable",
+    "pos": "Adjective",
+    "suffix": "-able"
+  },
+  {
+    "word": "bible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "dible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "sible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "wible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "edible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "foible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "laible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "raible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "trible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "weible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "audible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "fusible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "legible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "visible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "credible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "crucible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "eligible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "erodible",
+    "pos": "Adjective",
+    "suffix": "-ible"
+  },
+  {
+    "word": "arval",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "aural",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "axial",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "badal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "banal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "basal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "boral",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "cabal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "canal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "casal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "conal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "coral",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "coval",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "creal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "dalal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "deval",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "doral",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "doyal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "ducal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "dugal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "duval",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "equal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "ewbal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "fatal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "fecal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "feral",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "fetal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "final",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "focal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "fogal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "gamal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "gopal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "goral",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "gural",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "hamal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "huval",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "ideal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "indal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "iqbal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "jamal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "joyal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "kalal",
+    "pos": "Adjective",
+    "suffix": "-al"
+  },
+  {
+    "word": "alive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "clive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "drive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "naive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "olive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "shive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "waive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "arrive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "derive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "endive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "motive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "native",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "relive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "revive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "strive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "thrive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "abusive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "archive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "beehive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "captive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "connive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "deceive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "deprive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "elusive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "emotive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "emptive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "erosive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "evasive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "festive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "flahive",
+    "pos": "Adjective",
+    "suffix": "-ive"
+  },
+  {
+    "word": "kious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "knous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "pious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "thous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "aldous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "bayous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "belous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "joyous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "kalous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "lajous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "marous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "mucous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "odious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "porous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "vanous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "venous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "amorous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "animous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "anxious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "aqueous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "arduous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "bilious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "bulbous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "burrous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "callous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "chavous",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "copious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "curious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "devious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "dubious",
+    "pos": "Adjective",
+    "suffix": "-ous"
+  },
+  {
+    "word": "awful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "artful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "bagful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "earful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "fitful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "joyful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "lawful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "panful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "rueful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "sinful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "woeful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "baleful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "bashful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "careful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "doleful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "dutiful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "fateful",
+    "pos": "Adjective",
+    "suffix": "-ful"
+  },
+  {
+    "word": "bless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "gless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "kless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "pless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "unless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "ageless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "aimless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "airless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "bayless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "corless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "curless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "dowless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "earless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "eyeless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "farless",
+    "pos": "Adjective",
+    "suffix": "-less"
+  },
+  {
+    "word": "antic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "attic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "babic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "basic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "boric",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "bozic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "busic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "citic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "civic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "comic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "conic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "cosic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "cubic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "cusic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "cynic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "dedic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "doric",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "edric",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "ethic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "folic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "ganic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "husic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "indic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "ionic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "kubic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "logic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "lydic",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "lyric",
+    "pos": "Adjective",
+    "suffix": "-ic"
+  },
+  {
+    "word": "apical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "comical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "conical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "cynical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "domical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "ethical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "helical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "lexical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "logical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "lyrical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "magical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "medical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "monical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "musical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "optical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "radical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "topical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "typical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "atypical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "biblical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "carmical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "cervical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "chemical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "clerical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "clinical",
+    "pos": "Adjective",
+    "suffix": "-ical"
+  },
+  {
+    "word": "acary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "beary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "chary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "clary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "crary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "deary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "diary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "frary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "geary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "hoary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "keary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "leary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "neary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "omary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "ovary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "peary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "scary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "stary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "teary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "weary",
+    "pos": "Adjective",
+    "suffix": "-ary"
+  },
+  {
+    "word": "amory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "emory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "flory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "glory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "ivory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "story",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "armory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "demory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "gomory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "memory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "priory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "savory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "theory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "cursory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "euphory",
+    "pos": "Adjective",
+    "suffix": "-ory"
+  },
+  {
+    "word": "agent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "arent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "avent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "event",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "ghent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "ident",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "scent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "spent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "stent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "trent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "absent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "accent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "advent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "ardent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "argent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "ascent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "assent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "bagent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "berent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "bulent",
+    "pos": "Adjective",
+    "suffix": "-ent"
+  },
+  {
+    "word": "arant",
+    "pos": "Adjective",
+    "suffix": "-ant"
+  },
+  {
+    "word": "avant",
+    "pos": "Adjective",
+    "suffix": "-ant"
+  },
+  {
+    "word": "brant",
+    "pos": "Adjective",
+    "suffix": "-ant"
+  },
+  {
+    "word": "ably",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "ally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "daly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "duly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "ealy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "egly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "ehly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "elly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "erly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "holy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "idly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "joly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "july",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "lily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "maly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "moly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "oily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "olly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "only",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "orly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "poly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "rely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "wily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "wyly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "amply",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "apply",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "aptly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "badly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "baily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bayly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "belly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bialy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "billy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bolly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "braly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "bully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "burly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "cally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "carly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "colly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "comly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "conly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "coyly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "cully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "curly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "dally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "danly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "dealy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "deely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "deily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "dilly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "dimly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "doily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "dolly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "dryly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "farly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "feely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "filly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "folly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "fully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "gaily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "gilly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "godly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "golly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "gully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "hally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "hanly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "healy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "henly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "hilly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "holly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "hotly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "hurly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "icily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "imply",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "isaly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "italy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "jelly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "jolly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "jowly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "kealy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "keely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "kiely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "kubly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "kully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "lally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "lilly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "lolly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "lowly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "madly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "mally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "manly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "mcfly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "mealy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "melly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "milly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "molly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "nally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "narly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "nealy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "neely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "nelly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "newly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "nilly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "nobly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "oddly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "pauly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "polly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "rally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "reily",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "reply",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "riely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "rolly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "rowly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "sadly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "sally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "sealy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "seely",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "shyly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "slyly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "smyly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "solly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "sully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "surly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "tally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "telly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "teply",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "tilly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "tolly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "truly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "tully",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "wally",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "willy",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "wooly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "wryly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "acidly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "archly",
+    "pos": "Adverb",
+    "suffix": "-ly"
+  },
+  {
+    "word": "award",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "sward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "alward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "boward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "coward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "goward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "heward",
+    "pos": "Adverb",
+    "suffix": "-ward"
+  },
+  {
+    "word": "wards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "awards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "cowards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "edwards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "onwards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "rewards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "sowards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "towards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "upwards",
+    "pos": "Adverb",
+    "suffix": "-wards"
+  },
+  {
+    "word": "unwise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "edgewise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "sidewise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "timewise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "crosswise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "heartwise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "healthwise",
+    "pos": "Adverb",
+    "suffix": "-wise"
+  },
+  {
+    "word": "finalize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "specialize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "prioritize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "summarize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "customize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "authorize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "modernize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "standardize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "optimize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "maximize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "minimize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "characterize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "commercialize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "computerize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "centralize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "categorize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "criticize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "emphasize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "familiarize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "generalize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "harmonize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "legalize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "mobilize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "normalize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "personalize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "rationalize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "reorganize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "stabilize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "subsidize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "utilize",
+    "pos": "Verb",
+    "suffix": "-ize"
+  },
+  {
+    "word": "advertise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "advise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "arise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "comprise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "compromise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "exercise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "improvise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "revise",
+    "pos": "Verb",
+    "suffix": "-ise"
+  },
+  {
+    "word": "notify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "qualify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "simplify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "specify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "certify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "modify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "verify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "diversify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "intensify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "magnify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "purify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "solidify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "unify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "amplify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "beautify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "exemplify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "falsify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "fortify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "glorify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "gratify",
+    "pos": "Verb",
+    "suffix": "-ify"
+  },
+  {
+    "word": "shorten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "broaden",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "lengthen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "lessen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "brighten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "darken",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "fasten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "flatten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "harden",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "heighten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "loosen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "quicken",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "sharpen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "soften",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "sweeten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "tighten",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "weaken",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "worsen",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "awaken",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "blacken",
+    "pos": "Verb",
+    "suffix": "-en"
+  },
+  {
+    "word": "activate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "allocate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "anticipate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "appreciate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "celebrate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "collaborate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "compensate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "concentrate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "coordinate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "cultivate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "demonstrate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "designate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "eliminate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "facilitate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "generate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "hesitate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "illustrate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "incorporate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "indicate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "initiate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "innovate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "integrate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "migrate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "motivate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "negotiate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "operate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "participate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "regulate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "renovate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "replicate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "separate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  },
+  {
+    "word": "stimulate",
+    "pos": "Verb",
+    "suffix": "-ate"
+  }
+]

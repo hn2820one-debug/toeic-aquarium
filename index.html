@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+  />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#031633" />
+  <title>Deep Sea Word Aquarium</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+</head>
+<body>
+  <div class="ocean-bg" aria-hidden="true">
+    <div class="rays"></div>
+    <div class="bubbles"></div>
+  </div>
+
+  <header id="hud" class="hud hidden">
+    <div class="hud-item"><span id="hud-time-caption">時間</span>: <span id="hud-time">00:00</span></div>
+    <div class="hud-item" id="hud-progress-wrap">進度: <span id="hud-progress">0/30</span></div>
+    <div class="hud-item" id="hud-accuracy-wrap">準確: <span id="hud-accuracy">100%</span></div>
+    <div id="hud-ta-block" class="hud-ta hidden">
+      <div class="hud-item">分數: <span id="hud-score">0</span></div>
+      <div id="combo-wrap" class="combo-wrap">
+        <div id="combo-meter" class="combo-meter">COMBO x0</div>
+        <div class="combo-bar" aria-hidden="true"><div id="combo-bar-fill" class="combo-bar-fill"></div></div>
+      </div>
+    </div>
+    <div class="hud-item">Best: <span id="hud-best">--</span></div>
+    <button id="pause-btn" class="btn btn-small">Pause</button>
+    <button id="exit-menu-btn" type="button" class="btn btn-small btn-ghost">退出主畫面</button>
+  </header>
+  <button id="help-btn" class="btn btn-small help-btn hidden">❓ Help</button>
+
+  <main id="game-root">
+    <section id="tanks-area" class="tanks-area hidden" aria-label="Grammar tanks">
+      <div class="tank tank-noun" data-pos="Noun">Noun</div>
+      <div class="tank tank-verb" data-pos="Verb">Verb</div>
+      <div class="tank tank-adjective" data-pos="Adjective">Adjective</div>
+      <div class="tank tank-adverb" data-pos="Adverb">Adverb</div>
+    </section>
+    <canvas id="game-canvas" aria-label="Deep Sea Word Aquarium Canvas"></canvas>
+    <div id="recent-log-ticker" class="recent-log-ticker hidden" aria-live="polite" aria-label="Recent sorting log"></div>
+  </main>
+
+  <section id="menu-overlay" class="overlay active">
+    <div class="panel">
+      <h1>Deep Sea Word Aquarium</h1>
+      <p class="subtitle">深海單字水族館</p>
+      <p id="menu-best" class="subtitle">Best Record: --</p>
+      <fieldset class="mode-fieldset">
+        <legend class="mode-legend">遊戲模式</legend>
+        <label class="mode-label"><input type="radio" name="play-mode" value="zen" checked /> Zen 禪修（30 題・無限時・無連擊）</label>
+        <label class="mode-label"><input type="radio" name="play-mode" value="timeattack" /> Time Attack 限時（計分・連擊・10 魚補位）</label>
+      </fieldset>
+      <div class="panel-actions">
+        <button id="start-btn" class="btn">Start Game</button>
+        <button id="tutorial-btn" class="btn">Tutorial 📖</button>
+        <button id="wordbank-btn" class="btn btn-ghost">單字庫 📚</button>
+        <button id="records-btn" class="btn btn-ghost">戰績 📊</button>
+        <button id="history-learning-btn" type="button" class="btn btn-ghost">History 📜</button>
+        <button id="menu-settings-btn" class="btn btn-ghost">Settings</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="settings-overlay" class="overlay hidden">
+    <div class="panel panel-settings">
+      <h2>Settings ⚙️</h2>
+      <fieldset class="settings-fieldset">
+        <legend class="settings-legend">Game mode</legend>
+        <label class="mode-label"><input type="radio" name="settings-play-mode" value="zen" checked /> Zen（固定 30 題・無限時）</label>
+        <label class="mode-label"><input type="radio" name="settings-play-mode" value="timeattack" /> Time Attack（無限補魚・連擊計分）</label>
+      </fieldset>
+      <label id="settings-ta-time-row" class="setting-row" for="settings-ta-time-limit">
+        <span>Time Attack 時間（秒）</span>
+        <span class="setting-inline">
+          <input id="settings-ta-time-limit" type="range" min="30" max="180" step="5" value="120" />
+          <span id="settings-ta-time-value" class="setting-value">120s</span>
+        </span>
+      </label>
+      <label class="setting-row" for="settings-fish-speed">
+        <span>魚游速</span>
+        <span class="setting-inline">
+          <input id="settings-fish-speed" type="range" min="0.45" max="1.65" step="0.05" value="1" />
+          <span id="settings-fish-speed-value" class="setting-value">Normal (1.00×)</span>
+        </span>
+      </label>
+      <label class="setting-row setting-toggle" for="settings-pronunciation-toggle">
+        <span>抓取時朗讀（本機英文語音）</span>
+        <input id="settings-pronunciation-toggle" type="checkbox" checked />
+      </label>
+      <label class="setting-row" for="volume-slider">
+        <span>Volume</span>
+        <input id="volume-slider" type="range" min="0" max="100" value="60" />
+      </label>
+      <label class="setting-row" for="fullscreen-toggle">
+        <span>Fullscreen Mode</span>
+        <input id="fullscreen-toggle" type="checkbox" />
+      </label>
+      <label class="setting-row" for="difficulty-select">
+        <span>Difficulty</span>
+        <select id="difficulty-select">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+      <label class="setting-row" for="words-per-round">
+        <span>每局抽取單字數</span>
+        <input id="words-per-round" type="number" min="5" max="80" value="30" />
+      </label>
+      <div class="panel-actions">
+        <button id="settings-save-btn" class="btn">Save</button>
+        <button id="settings-close-btn" class="btn btn-ghost">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="history-learning-overlay" class="overlay hidden">
+    <div class="panel panel-wide panel-scroll history-learning-panel">
+      <div class="panel-top">
+        <h2>Learning History 📜</h2>
+        <button id="history-learning-close-btn" type="button" class="btn btn-ghost btn-small">Close ✖</button>
+      </div>
+      <p class="panel-hint">最近 50 筆排序記錄（本機 localStorage）。</p>
+      <div class="toolbar">
+        <button id="history-learning-clear-btn" type="button" class="btn btn-ghost btn-small">Reset Progress</button>
+      </div>
+      <div id="history-learning-list" class="history-learning-list"></div>
+    </div>
+  </section>
+
+  <section id="wordbank-overlay" class="overlay hidden">
+    <div class="panel panel-wide panel-scroll">
+      <div class="panel-top">
+        <h2>單字庫管理</h2>
+        <button id="wordbank-close-btn" type="button" class="btn btn-ghost btn-small">Close ✖</button>
+      </div>
+      <p class="panel-hint">資料儲存在本機瀏覽器（localStorage）。可匯入／匯出 JSON，或與專案內 words.json 合併。</p>
+      <div class="toolbar">
+        <input id="wordbank-filter" type="search" class="text-input" placeholder="搜尋單字或字尾…" />
+        <button id="wordbank-merge-json-btn" type="button" class="btn btn-small">合併 words.json</button>
+        <button id="wordbank-import-btn" type="button" class="btn btn-small">匯入 JSON</button>
+        <button id="wordbank-export-btn" type="button" class="btn btn-small">匯出 JSON</button>
+        <input id="wordbank-import-file" type="file" accept=".json,application/json" class="hidden" />
+      </div>
+      <form id="wordbank-form" class="wordbank-form">
+        <input id="wordbank-edit-index" type="hidden" value="" />
+        <input id="wordbank-word" type="text" class="text-input" placeholder="單字 word" required />
+        <select id="wordbank-pos" required>
+          <option value="Noun">Noun</option>
+          <option value="Verb">Verb</option>
+          <option value="Adjective">Adjective</option>
+          <option value="Adverb">Adverb</option>
+        </select>
+        <input id="wordbank-suffix" type="text" class="text-input" placeholder="字尾 suffix（如 -ness）" required />
+        <button type="submit" id="wordbank-save-row-btn" class="btn btn-small">新增／更新</button>
+        <button type="button" id="wordbank-form-clear-btn" class="btn btn-ghost btn-small">清除表單</button>
+      </form>
+      <div class="wordbank-table-wrap">
+        <table class="wordbank-table">
+          <thead>
+            <tr>
+              <th>單字</th>
+              <th>詞性</th>
+              <th>字尾</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="wordbank-tbody"></tbody>
+        </table>
+      </div>
+      <p id="wordbank-count" class="panel-hint"></p>
+    </div>
+  </section>
+
+  <section id="records-overlay" class="overlay hidden">
+    <div class="panel panel-wide panel-scroll">
+      <div class="panel-top">
+        <h2>戰績記錄</h2>
+        <button id="records-close-btn" type="button" class="btn btn-ghost btn-small">Close ✖</button>
+      </div>
+      <p class="panel-hint">最近 50 局遊戲（本機儲存）。</p>
+      <div class="toolbar">
+        <button id="records-clear-btn" type="button" class="btn btn-ghost btn-small">清空戰績</button>
+      </div>
+      <div class="wordbank-table-wrap">
+        <table class="wordbank-table">
+          <thead>
+            <tr>
+              <th>日期時間</th>
+              <th>難度</th>
+              <th>題數</th>
+              <th>準確率</th>
+              <th>用時</th>
+              <th>對/錯</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody id="records-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="tutorial-overlay" class="overlay hidden">
+    <div class="panel panel-wide tutorial-panel">
+      <div class="panel-top">
+        <h2>Tutorial / Cheat Sheet</h2>
+        <button id="tutorial-close-btn" class="btn btn-ghost btn-small">Close ✖</button>
+      </div>
+      <div class="cheatsheet-grid">
+        <article class="cheat-card noun">
+          <h3>Noun (名詞 📦)</h3>
+          <p>-tion, -sion, -ness, -ment, -ity, -ship, -ance</p>
+          <small>e.g., happiness, education</small>
+        </article>
+        <article class="cheat-card verb">
+          <h3>Verb (動詞 📦)</h3>
+          <p>-ize, -ise, -ify, -ate, -en</p>
+          <small>e.g., realize, identify</small>
+        </article>
+        <article class="cheat-card adjective">
+          <h3>Adjective (形容詞 📦)</h3>
+          <p>-ful, -less, -ous, -ive, -able, -al</p>
+          <small>e.g., beautiful, dangerous</small>
+        </article>
+        <article class="cheat-card adverb">
+          <h3>Adverb (副詞 📦)</h3>
+          <p>-ly, -ward, -wise</p>
+          <small>e.g., quickly, forward</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pause-overlay" class="overlay hidden">
+    <div class="panel">
+      <h2>Paused</h2>
+      <div class="panel-actions">
+        <button id="resume-btn" class="btn">Resume</button>
+        <button id="restart-btn" class="btn btn-ghost">Restart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gameover-overlay" class="overlay hidden">
+    <div class="panel panel-wide">
+      <h2 id="gameover-title">Game Complete</h2>
+      <p id="result-summary"></p>
+      <div id="weakness-list" class="weakness-list"></div>
+      <div class="panel-actions">
+        <button id="play-again-btn" class="btn">Play Again</button>
+        <button id="back-menu-btn" class="btn btn-ghost">Main Menu</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="game.js"></script>
+</body>
+</html>
