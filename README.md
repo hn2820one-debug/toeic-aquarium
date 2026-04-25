@@ -5,29 +5,33 @@
 
 ## 專案結構
 
-| 檔案 | 說明 |
-|------|------|
-| `index.html` | 主頁面、HUD、主選單、模式選擇、設定、暫停、結算、教學、單字庫、戰績 |
-| `style.css` | 深海背景、玻璃擬態 Tanks、HUD、連擊 UI、按鈕與 Modal |
-| `game.js` | 狀態機、雙模式邏輯、魚隻運動、拖放、計分／連擊、本機儲存 |
-| `words.json` | 預設詞庫（已合併本專案舊詞庫 + `toeic_suffix_words_1000.json`，約 1100+ 筆，去重後數量以實際檔案為準） |
-| `toeic_suffix_words_1000.json` | TOEIC 字尾詞庫來源檔（合併後可保留作備份；遊戲執行時讀取的是 `words.json`） |
-| `csv_excel_to_words_json.py` | CSV／Excel 轉 `words.json`（支援 `--merge-with` 合併去重） |
-| `Operator WI.md` | 玩家操作手冊 |
-| `manifest.webmanifest` | Web App 清單（加到主畫面、standalone） |
-| `icon.png` | Apple Touch Icon／PWA 圖示 |
-| `.nojekyll` | 告訴 GitHub Pages 不要用 Jekyll 處理靜態檔 |
-| `手機使用與GitHub上線教學.md` | **出街用手機玩**：GitHub 上線步驟 + iPhone 操作詳解 |
+
+| 檔案                             | 說明                                                                      |
+| ------------------------------ | ----------------------------------------------------------------------- |
+| `index.html`                   | 主頁面、HUD、主選單、模式選擇、設定、暫停、結算、教學、單字庫、戰績                                     |
+| `style.css`                    | 深海背景、玻璃擬態 Tanks、HUD、連擊 UI、按鈕與 Modal                                     |
+| `game.js`                      | 狀態機、雙模式邏輯、魚隻運動、拖放、計分／連擊、本機儲存                                            |
+| `words.json`                   | 預設詞庫（已合併本專案舊詞庫 + `toeic_suffix_words_1000.json`，約 1100+ 筆，去重後數量以實際檔案為準） |
+| `toeic_suffix_words_1000.json` | TOEIC 字尾詞庫來源檔（合併後可保留作備份；遊戲執行時讀取的是 `words.json`）                         |
+| `csv_excel_to_words_json.py`   | CSV／Excel 轉 `words.json`（支援 `--merge-with` 合併去重）                        |
+| `Operator WI.md`               | 玩家操作手冊                                                                  |
+| `manifest.webmanifest`         | Web App 清單（加到主畫面、standalone）                                            |
+| `icon.png`                     | Apple Touch Icon／PWA 圖示                                                 |
+| `.nojekyll`                    | 告訴 GitHub Pages 不要用 Jekyll 處理靜態檔                                        |
+| `手機使用與GitHub上線教學.md`           | **出街用手機玩**：GitHub 上線步驟 + iPhone 操作詳解                                    |
+
 
 ## 遊戲模式
 
 ### Zen 禪修模式
+
 - 固定 **30** 題（與設定裡「每局抽取單字數」無關）。
 - **無限時**，無回合倒數壓力。
 - **無計分、無連擊**；拖錯仍會記錄弱點字尾。
 - 全部魚分類完畢即結算。
 
 ### Time Attack 限時模式
+
 - 畫面常態維持 **10** 條魚：拖走一隻即隨機補一隻。
 - 依難度有 **回合剩餘時間**（倒數歸零則結束）。
 - **計分**：答對 +10，連擊加成為 `(連擊數 − 1) × 2`（第一下答對僅 +10）；答錯 −5。
@@ -79,11 +83,11 @@ python -m http.server 8000
 
 1. 在 GitHub **New repository**（例如 `toeic-aquarium`），**不要**勾選 Add README（若本機已有檔案）。
 2. 本專案資料夾**已建立 Git 並完成首次 commit**（分支 `main`）。在本機專案目錄只需連線遠端並上傳（將 `YOUR_USER` / `toeic-aquarium` 改成你的）：
-   ```bash
+  ```bash
    git remote add origin https://github.com/YOUR_USER/toeic-aquarium.git
    git push -u origin main
-   ```
-   更細步驟與 iPhone 操作見 **`手機使用與GitHub上線教學.md`**。
+  ```
+   更細步驟與 iPhone 操作見 `**手機使用與GitHub上線教學.md**`。
 3. Repo **Settings → Pages**：**Deploy from a branch**，Branch 選 **main**，folder **/ (root)**，Save。
 4. 約 1–2 分鐘後，網址為：`https://YOUR_USER.github.io/toeic-aquarium/`（以 GitHub 顯示為準）。
 
@@ -93,3 +97,4 @@ python -m http.server 8000
 
 - 調整 `game.js` 後建議手測：兩種模式開局、暫停、**退出主畫面**、結算、單字庫存檔。
 - 大量更新詞庫可繼續使用 `csv_excel_to_words_json.py`（合併模式見該檔案註解與 `--help`）。
+

@@ -2,7 +2,7 @@
 
 > **關於「幫你直接上傳」**  
 > 任何自動程式都**無法代替你**登入 GitHub 帳號執行 `git push`（安全政策：要有你本機的憑證或權杖）。  
-> 我已在你電腦上的專案資料夾完成：**`git init`、第一個 `commit`（main 分支）**。  
+> 我已在你電腦上的專案資料夾完成：`**git init`、第一個 `commit`（main 分支）**。  
 > 你只要照下面 **「第一次推到 GitHub」** 做一次連線與上傳，之後改程式再 `push` 即可。
 
 ---
@@ -27,7 +27,7 @@
 cd "E:\VScode\Python\Parts of speech fishing"
 ```
 
-3. 把遠端指到你的倉庫（**把 `你的帳號` 改成 GitHub 用戶名**）：
+1. 把遠端指到你的倉庫（**把 `你的帳號` 改成 GitHub 用戶名**）：
 
 ```powershell
 git remote add origin https://github.com/你的帳號/toeic-aquarium.git
@@ -40,15 +40,14 @@ git remote remove origin
 git remote add origin https://github.com/你的帳號/toeic-aquarium.git
 ```
 
-4. 推送：
+1. 推送：
 
 ```powershell
 git push -u origin main
 ```
 
-5. 若跳出登入視窗：用 **GitHub 帳號** 或 **Personal Access Token（PAT）** 完成驗證（依 GitHub 目前要求為準）。
-
-6. 成功後，到 GitHub 網頁重新整理倉庫，應可看到 `index.html`、`game.js` 等檔案。
+1. 若跳出登入視窗：用 **GitHub 帳號** 或 **Personal Access Token（PAT）** 完成驗證（依 GitHub 目前要求為準）。
+2. 成功後，到 GitHub 網頁重新整理倉庫，應可看到 `index.html`、`game.js` 等檔案。
 
 > **若 GitHub 建倉庫時已勾了 README** 導致第一次 `push` 被拒絕：  
 > 可改在 GitHub 倉庫頁面照指示「pull 合併」再 push，或刪倉庫重建空倉庫（較單純）。有需要可截圖錯誤訊息再查。
@@ -62,9 +61,7 @@ git push -u origin main
 3. **Build and deployment** → **Source** 選 **Deploy from a branch**。
 4. **Branch** 選 **main**，資料夾選 **/ (root)** → **Save**。
 5. 等約 **1～2 分鐘**，同一頁會出現網址，形式類似：
-
-   `https://你的帳號.github.io/toeic-aquarium/`
-
+  `https://你的帳號.github.io/toeic-aquarium/`
 6. 用電腦瀏覽器先開一次，確認能進入主選單、能 **Start Game**。
 
 ---
@@ -106,11 +103,13 @@ git push -u origin main
 
 ### 6. 常見問題
 
-| 情況 | 可試做法 |
-|------|-----------|
-| 白畫面或一直載入 | 檢查 Wi‑Fi／流動數據；關掉分頁重開網址。 |
-| 拖曳不順 | 避免多指同時觸控；可直向握機。 |
-| 想更新到最新版 | 在 Safari 開著遊戲分頁 → 重新整理；或刪掉主畫面捷徑後再加一次。 |
+
+| 情況       | 可試做法                                  |
+| -------- | ------------------------------------- |
+| 白畫面或一直載入 | 檢查 Wi‑Fi／流動數據；關掉分頁重開網址。               |
+| 拖曳不順     | 避免多指同時觸控；可直向握機。                       |
+| 想更新到最新版  | 在 Safari 開著遊戲分頁 → 重新整理；或刪掉主畫面捷徑後再加一次。 |
+
 
 ---
 
@@ -132,6 +131,6 @@ git push
 ## 需要幫忙時請準備
 
 - GitHub **倉庫網址**  
-- `git push` 的 **完整錯誤訊息**（複製貼上）  
+- `git push` 的 **完整錯誤訊息**（複製貼上）
 
 這樣才能針對登入、權限或分支問題逐步排除。
