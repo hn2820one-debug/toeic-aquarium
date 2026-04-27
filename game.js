@@ -381,6 +381,7 @@ class InputManager {
       return;
     }
     this.game.initAudioContext();
+    this.game.warmupSpeechSynthesis();
     this.game.speakWordOnGrab(fish.word);
     fish.dragging = true;
     this.draggingFish = fish;
@@ -538,6 +539,7 @@ class Game {
     this.audioCtx = null;
     this.masterGain = null;
     this.ttsVoice = null;
+    this.ttsPrimed = false;
     this.refreshTtsVoiceList();
     if (typeof window !== "undefined" && window.speechSynthesis) {
       window.speechSynthesis.addEventListener("voiceschanged", () => this.refreshTtsVoiceList());
@@ -548,6 +550,9 @@ class Game {
     this.resize();
     this.renderBestStats();
     window.addEventListener("resize", () => this.resize());
+    window.addEventListener("orientationchange", () => {
+      window.setTimeout(() => this.resize(), 200);
+    });
     if (window.visualViewport) {
       window.visualViewport.addEventListener("resize", () => this.resize());
       window.visualViewport.addEventListener("scroll", () => this.resize());
@@ -1109,11 +1114,31 @@ class Game {
     this.canvas.style.height = `${cssH}px`;
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+    if (this.tanksArea && !this.tanksArea.classList.contains("hidden")) {
+      let tanksTop = 8;
+      if (this.hud && !this.hud.classList.contains("hidden")) {
+        const hudRect = this.hud.getBoundingClientRect();
+        if (hudRect && Number.isFinite(hudRect.bottom)) {
+          tanksTop = Math.max(6, Math.floor(hudRect.bottom + 8));
+        }
+      }
+      this.tanksArea.style.top = `${tanksTop}px`;
+    } else if (this.tanksArea) {
+      this.tanksArea.style.top = "";
+    }
+
+    let playTop = cssH * 0.3 + 8;
+    if (this.tanksArea && !this.tanksArea.classList.contains("hidden")) {
+      const tr = this.tanksArea.getBoundingClientRect();
+      if (tr.height > 0) {
+        playTop = Math.min(cssH * 0.62, Math.max(96, tr.bottom + 10));
+      }
+    }
     this.bounds = {
       width: cssW,
       height: cssH,
-      playTop: cssH * 0.3 + 8,
-      padding: 20
+      playTop,
+      padding: Math.min(20, Math.max(10, Math.floor(cssW * 0.04)))
     };
     this.tanks.forEach((tank) => tank.refreshRect());
     this.fishes.forEach((fish) => fish.resizeBounds(this.bounds));
@@ -1505,31 +1530,104 @@ class Game {
       return;
     }
     const voices = window.speechSynthesis.getVoices() || [];
-    const enLocal = voices.filter(
-      (v) => v.lang && v.lang.toLowerCase().startsWith("en") && v.localService === true
-    );
-    const enAny = voices.filter((v) => v.lang && v.lang.toLowerCase().startsWith("en"));
-    this.ttsVoice = enLocal[0] || enAny[0] || null;
+    const langEn = (v) => {
+      const raw = (v.lang || "").toLowerCase().replace(/_/g, "-");
+      return raw.startsWith("en");
+    };
+    const enAny = voices.filter(langEn);
+    const enLocal = enAny.filter((v) => v.localService === true);
+    this.ttsVoice =
+      enLocal[0] ||
+      enAny[0] ||
+      voices.find((v) => /english|en-/i.test(v.name || "")) ||
+      null;
+  }
+
+  warmupSpeechSynthesis() {
+    const syn = window.speechSynthesis;
+    if (!syn || this.ttsPrimed) {
+      return;
+    }
+    this.ttsPrimed = true;
+    if (typeof syn.resume === "function") {
+      try {
+        syn.resume();
+      } catch (_e) {
+        // Ignore.
+      }
+    }
+    // Prime iOS voice pipeline on first user gesture.
+    try {
+      const primer = new SpeechSynthesisUtterance(" ");
+      primer.volume = 0;
+      primer.rate = 1;
+      syn.cancel();
+      syn.speak(primer);
+      setTimeout(() => syn.cancel(), 30);
+    } catch (_err) {
+      // Ignore; not all browsers allow silent primer utterance.
+    }
   }
 
   speakWordOnGrab(word) {
     if (!this.settings.pronunciationEnabled || !word) {
       return;
     }
-    if (!window.speechSynthesis) {
+    const syn = window.speechSynthesis;
+    if (!syn) {
       return;
     }
-    this.refreshTtsVoiceList();
-    const u = new SpeechSynthesisUtterance(String(word));
-    if (this.ttsVoice) {
-      u.voice = this.ttsVoice;
-      u.lang = this.ttsVoice.lang || "en-US";
-    } else {
-      u.lang = "en-US";
+    if (typeof syn.resume === "function") {
+      try {
+        syn.resume();
+      } catch (_e) {
+        /* iOS may throw if not paused */
+      }
     }
-    u.rate = 1.05;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(u);
+    const runSpeak = () => {
+      this.refreshTtsVoiceList();
+      const u = new SpeechSynthesisUtterance(String(word));
+      u.lang = "en-US";
+      if (this.ttsVoice) {
+        u.voice = this.ttsVoice;
+        const L = (this.ttsVoice.lang || "en-US").replace(/_/g, "-");
+        u.lang = /^en/i.test(L) ? L : "en-US";
+      }
+      u.rate = 0.92;
+      u.volume = 1;
+      u.onerror = () => {
+        // Retry once with browser default voice.
+        try {
+          const fb = new SpeechSynthesisUtterance(String(word));
+          fb.lang = "en-US";
+          fb.rate = 0.92;
+          fb.volume = 1;
+          syn.cancel();
+          syn.speak(fb);
+        } catch (_e) {
+          // Ignore.
+        }
+      };
+      syn.cancel();
+      syn.speak(u);
+    };
+    const vlist = syn.getVoices() || [];
+    if (vlist.length > 0) {
+      runSpeak();
+    } else {
+      let done = false;
+      const once = () => {
+        if (done) {
+          return;
+        }
+        done = true;
+        syn.removeEventListener("voiceschanged", once);
+        clearTimeout(retryTimer);
+        runSpeak();
+      };
+      syn.addEventListener("voiceschanged", once);
+      const retryTimer = setTimeout(once, 750);
+    }
   }
 
   playDing() {
