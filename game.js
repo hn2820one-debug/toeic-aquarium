@@ -9,7 +9,8 @@ const STORAGE_KEYS = {
   wordBank: "deepsea_word_aquarium_word_bank",
   stats: "deepsea_word_aquarium_stats",
   history: "deepsea_word_aquarium_history",
-  learningHistory: "deepsea_word_aquarium_learning_history"
+  learningHistory: "deepsea_word_aquarium_learning_history",
+  wordStats: "deepsea_word_aquarium_word_stats"
 };
 
 const VALID_POS = new Set(["Noun", "Verb", "Adjective", "Adverb"]);
@@ -18,6 +19,7 @@ const WORDS_PER_ROUND_MAX = 80;
 const HISTORY_MAX = 50;
 const LEARNING_HISTORY_MAX = 50;
 const ZEN_FIXED_WORDS = 30;
+const STATIC_MODE_WORDS = 30;
 const TIME_ATTACK_FISH_COUNT = 10;
 const COMBO_WINDOW_SEC = 3;
 const SCORE_CORRECT_BASE = 10;
@@ -504,12 +506,13 @@ class Game {
     if (this.settings.pronunciationEnabled == null) {
       this.settings.pronunciationEnabled = true;
     }
-    if (this.settings.playMode !== "zen" && this.settings.playMode !== "timeattack") {
+    if (this.settings.playMode !== "zen" && this.settings.playMode !== "timeattack" && this.settings.playMode !== "static") {
       this.settings.playMode = "zen";
     }
     this.settings.timeAttackDurationSec = clampTaTimeLimitSec(this.settings.timeAttackDurationSec);
     this.settings.fishSpeedScale = clampFishSpeedScale(this.settings.fishSpeedScale);
     this.stats = this.loadStats();
+    this.wordStats = this.loadWordStats();
 
     this.wordBank = [];
     this.sessionWords = [];
@@ -535,6 +538,8 @@ class Game {
     this.sessionPool = [];
     this.scorePopups = [];
     this.recentSortSamples = [];
+    this.staticSessionQueue = [];
+    this.staticSessionIndex = 0;
 
     this.audioCtx = null;
     this.masterGain = null;
@@ -593,6 +598,52 @@ class Game {
     localStorage.setItem(STORAGE_KEYS.stats, JSON.stringify(this.stats));
   }
 
+  loadWordStats() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.wordStats);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return typeof parsed === "object" && parsed !== null && !Array.isArray(parsed) ? parsed : {};
+    } catch (_err) {
+      return {};
+    }
+  }
+
+  saveWordStats() {
+    localStorage.setItem(STORAGE_KEYS.wordStats, JSON.stringify(this.wordStats));
+  }
+
+  updateWordStat(word, isCorrect) {
+    if (!this.wordStats[word]) {
+      this.wordStats[word] = { correct: 0, wrong: 0 };
+    }
+    if (isCorrect) {
+      this.wordStats[word].correct += 1;
+    } else {
+      this.wordStats[word].wrong += 1;
+    }
+    this.saveWordStats();
+  }
+
+  getWordWeight(word) {
+    const stat = this.wordStats[word];
+    if (!stat) return 10;
+    const { correct, wrong } = stat;
+    if (correct >= 10 && wrong === 0) return 1;
+    return Math.max(1, 10 + wrong * 5 - correct * 2);
+  }
+
+  pickWeightedWord(pool) {
+    const weights = pool.map((w) => this.getWordWeight(w.word));
+    const total = weights.reduce((a, b) => a + b, 0);
+    let rand = Math.random() * total;
+    for (let i = 0; i < pool.length; i += 1) {
+      rand -= weights[i];
+      if (rand <= 0) return pool[i];
+    }
+    return pool[pool.length - 1];
+  }
+
   loadPrefs() {
     try {
       const raw = localStorage.getItem(STORAGE_KEYS.prefs);
@@ -605,7 +656,7 @@ class Game {
         fullscreen: typeof p.fullscreen === "boolean" ? p.fullscreen : undefined,
         difficulty: typeof p.difficulty === "string" ? p.difficulty : undefined,
         wordsPerRound: p.wordsPerRound != null ? clampWordsPerRound(p.wordsPerRound) : undefined,
-        playMode: p.playMode === "timeattack" || p.playMode === "zen" ? p.playMode : undefined,
+        playMode: ["zen", "timeattack", "static"].includes(p.playMode) ? p.playMode : undefined,
         timeAttackDurationSec: p.timeAttackDurationSec != null ? clampTaTimeLimitSec(p.timeAttackDurationSec) : undefined,
         fishSpeedScale: p.fishSpeedScale != null ? clampFishSpeedScale(p.fishSpeedScale) : undefined,
         pronunciationEnabled: typeof p.pronunciationEnabled === "boolean" ? p.pronunciationEnabled : undefined
@@ -621,7 +672,7 @@ class Game {
       fullscreen: this.settings.fullscreen,
       difficulty: this.settings.difficulty,
       wordsPerRound: clampWordsPerRound(this.settings.wordsPerRound),
-      playMode: this.settings.playMode === "timeattack" ? "timeattack" : "zen",
+      playMode: ["zen", "timeattack", "static"].includes(this.settings.playMode) ? this.settings.playMode : "zen",
       timeAttackDurationSec: clampTaTimeLimitSec(this.settings.timeAttackDurationSec),
       fishSpeedScale: clampFishSpeedScale(this.settings.fishSpeedScale),
       pronunciationEnabled: Boolean(this.settings.pronunciationEnabled)
@@ -756,9 +807,35 @@ class Game {
     if (!this.historyLearningOverlay) {
       return;
     }
+    this.renderMasteryProgress();
     this.renderLearningHistoryList();
     this.historyLearningOverlay.classList.remove("hidden");
     this.historyLearningOverlay.classList.add("active");
+  }
+
+  renderMasteryProgress() {
+    const section = document.getElementById("mastery-progress-section");
+    if (!section) return;
+    const stats = this.wordStats;
+    const masteredWords = Object.entries(stats)
+      .filter(([, s]) => s.correct >= 10 && s.wrong === 0)
+      .map(([word]) => word)
+      .sort();
+    const trickyWords = Object.entries(stats)
+      .filter(([, s]) => s.wrong > 3)
+      .map(([word, s]) => ({ word, wrong: s.wrong }))
+      .sort((a, b) => b.wrong - a.wrong);
+    section.innerHTML = `
+      <div class="mastery-header">Mastery Progress</div>
+      <div class="mastery-item mastery-mastered">
+        <span class="mastery-label">⭐ Mastered (Correct ≥ 10, Wrong = 0): <strong>${masteredWords.length}</strong></span>
+        <span class="mastery-words">${masteredWords.length > 0 ? masteredWords.join(", ") : "—"}</span>
+      </div>
+      <div class="mastery-item mastery-tricky">
+        <span class="mastery-label">⚠️ Tricky (Wrong > 3): <strong>${trickyWords.length}</strong></span>
+        <span class="mastery-words">${trickyWords.length > 0 ? trickyWords.map((w) => `${w.word} (×${w.wrong})`).join(", ") : "—"}</span>
+      </div>
+    `;
   }
 
   closeHistoryLearningOverlay() {
@@ -960,7 +1037,7 @@ class Game {
       const acc = r.accuracy != null ? `${r.accuracy}%` : "";
       const time = r.timeMs != null ? this.formatTime(r.timeMs) : "";
       const cw = `${r.correct ?? 0} / ${r.wrong ?? 0}`;
-      const mode = r.gameMode === "timeattack" ? "TA" : r.gameMode === "zen" ? "Zen" : "";
+      const mode = r.gameMode === "timeattack" ? "TA" : r.gameMode === "static" ? "Drill" : "Zen";
       const scorePart = r.score != null ? ` 分${r.score}` : "";
       const note = r.isTimeout ? "時間到" : "完成";
       const noteCell = [mode + scorePart, note].filter(Boolean).join(" · ");
@@ -1155,7 +1232,8 @@ class Game {
 
   getSelectedPlayMode() {
     const el = document.querySelector('input[name="play-mode"]:checked');
-    return el && el.value === "timeattack" ? "timeattack" : "zen";
+    if (el && ["zen", "timeattack", "static"].includes(el.value)) return el.value;
+    return "zen";
   }
 
   hideMenuAndShowGameSurface() {
@@ -1186,6 +1264,8 @@ class Game {
     const mode = this.settings.playMode;
     if (mode === "timeattack") {
       this.startTimeAttackGame();
+    } else if (mode === "static") {
+      this.startStaticGame();
     } else {
       this.startZenGame();
     }
@@ -1284,6 +1364,68 @@ class Game {
     while (this.playMode === "timeattack" && this.fishes.length < TIME_ATTACK_FISH_COUNT) {
       this.spawnOneTimeAttackFish();
     }
+  }
+
+  startStaticGame() {
+    const sourcePool = this.applyDifficultyToWordPool();
+    if (sourcePool.length < 1) {
+      window.alert("符合難度與字長條件的單字不足。請調低難度或到單字庫新增詞條。");
+      return;
+    }
+
+    this.playMode = "static";
+    this.score = 0;
+    this.comboCount = 0;
+    this.comboTimeLeft = 0;
+    this.scorePopups = [];
+    this.recentSortSamples = [];
+    this.sessionPool = sourcePool;
+    this.state = "PLAYING";
+    this.totalWords = STATIC_MODE_WORDS;
+    this.timeLimitSec = 0;
+    this.sessionWords = [];
+    this.mistakes = {};
+    this.correctCount = 0;
+    this.wrongCount = 0;
+    this.startMs = performance.now();
+    this.accumulatedPauseMs = 0;
+    this.pauseStarted = 0;
+    this.elapsedMs = 0;
+    this.pauseReason = null;
+
+    this.staticSessionQueue = [];
+    for (let i = 0; i < STATIC_MODE_WORDS; i += 1) {
+      this.staticSessionQueue.push(this.pickWeightedWord(sourcePool));
+    }
+    this.staticSessionIndex = 0;
+
+    this.fishes = [];
+    this.particles = [];
+
+    this.hudTaBlock.classList.add("hidden");
+    this.hideMenuAndShowGameSurface();
+    this.renderBestStats();
+    this.updateHud();
+
+    setTimeout(() => this.spawnNextStaticFish(), 120);
+  }
+
+  spawnNextStaticFish() {
+    if (this.state !== "PLAYING") return;
+    if (this.staticSessionIndex >= this.staticSessionQueue.length) {
+      this.finishGame(false);
+      return;
+    }
+    const wordData = this.staticSessionQueue[this.staticSessionIndex];
+    this.staticSessionIndex += 1;
+    const cx = this.bounds.width / 2;
+    const cy = (this.bounds.playTop + this.bounds.height) / 2;
+    const fish = new Fish(wordData, this.bounds, 0);
+    fish.x = cx;
+    fish.y = cy;
+    fish.vx = 0;
+    fish.vy = 0;
+    this.fishes.push(fish);
   }
 
   pauseGame(reason) {
@@ -1415,7 +1557,7 @@ class Game {
     this.settings.difficulty = this.difficultySelect.value;
     this.settings.wordsPerRound = clampWordsPerRound(this.wordsPerRoundInput.value);
     const settingsModeEl = document.querySelector('input[name="settings-play-mode"]:checked');
-    if (settingsModeEl && (settingsModeEl.value === "zen" || settingsModeEl.value === "timeattack")) {
+    if (settingsModeEl && ["zen", "timeattack", "static"].includes(settingsModeEl.value)) {
       this.settings.playMode = settingsModeEl.value;
     }
     if (this.settingsTaTimeLimit) {
@@ -1480,15 +1622,11 @@ class Game {
   }
 
   syncMainMenuPlayModeFromSettings() {
-    const mode = this.settings.playMode === "timeattack" ? "timeattack" : "zen";
-    const zenRadio = document.querySelector('input[name="play-mode"][value="zen"]');
-    const taRadio = document.querySelector('input[name="play-mode"][value="timeattack"]');
-    if (zenRadio) {
-      zenRadio.checked = mode === "zen";
-    }
-    if (taRadio) {
-      taRadio.checked = mode === "timeattack";
-    }
+    const mode = this.settings.playMode;
+    ["zen", "timeattack", "static"].forEach((v) => {
+      const radio = document.querySelector(`input[name="play-mode"][value="${v}"]`);
+      if (radio) radio.checked = v === mode;
+    });
   }
 
   syncSettingsPlayModeRadiosFromSettings() {
@@ -1707,6 +1845,20 @@ class Game {
   }
 
   cancelFishDropOutsideTanks(fish) {
+    if (this.playMode === "static") {
+      fish.dragging = false;
+      fish.snapping = true;
+      fish.snapTargetX = this.bounds.width / 2;
+      fish.snapTargetY = (this.bounds.playTop + this.bounds.height) / 2;
+      setTimeout(() => {
+        if (!fish.removed && !fish.correctionMode) {
+          fish.snapping = false;
+          fish.vx = 0;
+          fish.vy = 0;
+        }
+      }, 350);
+      return;
+    }
     const cfg = DIFFICULTY_CONFIG[this.settings.difficulty] || DIFFICULTY_CONFIG.normal;
     const speedMul = cfg.speedMultiplier * this.getFishSpeedMultiplier();
     fish.snapping = false;
@@ -1742,6 +1894,7 @@ class Game {
     this.playBuzz();
     this.emitParticles(fish.x, fish.y, false);
     this.wrongDropImmediateScoring(fish);
+    this.updateWordStat(fish.word, false);
     this.appendLearningHistoryEntry({
       word: fish.word,
       playerChoice: String(playerChoiceTankName || ""),
@@ -1778,6 +1931,10 @@ class Game {
     this.fishes = this.fishes.filter((f) => f !== fish);
     if (this.playMode === "timeattack") {
       this.ensureTimeAttackFishCount();
+      return;
+    }
+    if (this.playMode === "static") {
+      this.spawnNextStaticFish();
       return;
     }
     if (this.correctCount + this.wrongCount >= this.totalWords) {
@@ -1854,6 +2011,7 @@ class Game {
       return;
     }
     this.playDing();
+    this.updateWordStat(fish.word, true);
     this.appendLearningHistoryEntry({
       word: fish.word,
       playerChoice: tank.name,
@@ -1877,6 +2035,15 @@ class Game {
       this.ensureTimeAttackFishCount();
       this.updateComboHud({ pulse: true });
       this.updateHud();
+      return;
+    }
+
+    if (this.playMode === "static") {
+      this.correctCount += 1;
+      this.emitParticles(fish.x, fish.y, true);
+      this.fishes = this.fishes.filter((f) => !f.removed);
+      this.updateHud();
+      this.spawnNextStaticFish();
       return;
     }
 
@@ -1926,7 +2093,10 @@ class Game {
     const totalAttempts = this.correctCount + this.wrongCount;
     const accuracy = totalAttempts === 0 ? 100 : Math.round((this.correctCount / totalAttempts) * 100);
 
-    if (this.playMode === "timeattack") {
+    if (this.playMode === "static") {
+      this.gameoverTitle.textContent = "Drill Complete 🎯";
+      this.resultSummary.textContent = `Correct: ${this.correctCount} · Wrong: ${this.wrongCount} · Time: ${this.formatTime(this.elapsedMs)} · Accuracy: ${accuracy}%`;
+    } else if (this.playMode === "timeattack") {
       this.gameoverTitle.textContent = "Time Attack 結束";
       const tag = isTimeout ? "（時間到）" : "";
       this.resultSummary.textContent = `分數 ${this.score} | 排序 ${totalAttempts} 次 | 準確率 ${accuracy}%${tag}`;
@@ -1955,7 +2125,7 @@ class Game {
       at: new Date().toISOString(),
       gameMode: this.playMode,
       difficulty: this.settings.difficulty,
-      wordCount: this.playMode === "zen" ? this.totalWords : totalAttempts,
+      wordCount: this.playMode === "timeattack" ? totalAttempts : this.totalWords,
       accuracy,
       score: this.playMode === "timeattack" ? this.score : undefined,
       timeMs: Math.round(this.elapsedMs),
@@ -2029,10 +2199,7 @@ class Game {
   update(dt) {
     const shouldAnimate = this.state === "PLAYING";
     if (shouldAnimate) {
-      if (this.playMode === "zen") {
-        this.updateHud();
-        this.fishes.forEach((fish) => fish.update(dt));
-      } else {
+      if (this.playMode === "timeattack") {
         this.elapsedMs = this.getElapsedMs();
         const remainingMs = this.timeLimitSec * 1000 - this.elapsedMs;
         if (remainingMs <= 0) {
@@ -2048,6 +2215,9 @@ class Game {
             this.updateComboHud({ pulse: false });
           }
         }
+        this.updateHud();
+        this.fishes.forEach((fish) => fish.update(dt));
+      } else {
         this.updateHud();
         this.fishes.forEach((fish) => fish.update(dt));
       }

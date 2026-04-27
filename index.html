@@ -58,6 +58,7 @@
         <legend class="mode-legend">遊戲模式</legend>
         <label class="mode-label"><input type="radio" name="play-mode" value="zen" checked /> Zen 禪修（30 題・無限時・無連擊）</label>
         <label class="mode-label"><input type="radio" name="play-mode" value="timeattack" /> Time Attack 限時（計分・連擊・10 魚補位）</label>
+        <label class="mode-label"><input type="radio" name="play-mode" value="static" /> Static Mode 單字訓練（30 題・一次一魚・自適應頻率）</label>
       </fieldset>
       <div class="panel-actions">
         <button id="start-btn" class="btn">Start Game</button>
@@ -77,6 +78,7 @@
         <legend class="settings-legend">Game mode</legend>
         <label class="mode-label"><input type="radio" name="settings-play-mode" value="zen" checked /> Zen（固定 30 題・無限時）</label>
         <label class="mode-label"><input type="radio" name="settings-play-mode" value="timeattack" /> Time Attack（無限補魚・連擊計分）</label>
+        <label class="mode-label"><input type="radio" name="settings-play-mode" value="static" /> Static（30 題・一次一魚・自適應）</label>
       </fieldset>
       <label id="settings-ta-time-row" class="setting-row" for="settings-ta-time-limit">
         <span>Time Attack 時間（秒）</span>
@@ -130,6 +132,7 @@
         <button id="history-learning-close-btn" type="button" class="btn btn-ghost btn-small">Close ✖</button>
       </div>
       <p class="panel-hint">最近 50 筆排序記錄（本機 localStorage）。</p>
+      <div id="mastery-progress-section" class="mastery-progress-section"></div>
       <div class="toolbar">
         <button id="history-learning-clear-btn" type="button" class="btn btn-ghost btn-small">Reset Progress</button>
       </div>
@@ -218,24 +221,57 @@
       </div>
       <div class="cheatsheet-grid">
         <article class="cheat-card noun">
-          <h3>Noun (名詞 📦)</h3>
-          <p>-tion, -sion, -ness, -ment, -ity, -ship, -ance</p>
-          <small>e.g., happiness, education</small>
-        </article>
-        <article class="cheat-card verb">
-          <h3>Verb (動詞 📦)</h3>
-          <p>-ize, -ise, -ify, -ate, -en</p>
-          <small>e.g., realize, identify</small>
+          <h3>Noun 名詞</h3>
+          <table class="cheat-table">
+            <tr><td>-tion / -sion</td><td>education, vision</td></tr>
+            <tr><td>-ment</td><td>government, movement</td></tr>
+            <tr><td>-ance / -ence</td><td>importance, difference</td></tr>
+            <tr><td>-ity / -ty</td><td>ability, safety</td></tr>
+            <tr><td>-ness</td><td>happiness, darkness</td></tr>
+            <tr><td>-er / -or</td><td>teacher, actor</td></tr>
+            <tr><td>-ee</td><td>employee, trainee</td></tr>
+            <tr><td>-ist</td><td>artist, scientist</td></tr>
+            <tr><td>-ant / -ent</td><td>assistant, student</td></tr>
+            <tr><td>-ship</td><td>friendship, leadership</td></tr>
+            <tr><td>-age</td><td>damage, storage</td></tr>
+            <tr><td>-al</td><td>arrival, proposal</td></tr>
+            <tr><td>-cy</td><td>policy, accuracy</td></tr>
+            <tr><td>-ure</td><td>failure, structure</td></tr>
+          </table>
         </article>
         <article class="cheat-card adjective">
-          <h3>Adjective (形容詞 📦)</h3>
-          <p>-ful, -less, -ous, -ive, -able, -al</p>
-          <small>e.g., beautiful, dangerous</small>
+          <h3>Adjective 形容詞</h3>
+          <table class="cheat-table">
+            <tr><td>-able / -ible</td><td>capable, flexible</td></tr>
+            <tr><td>-al</td><td>national, central</td></tr>
+            <tr><td>-ive</td><td>active, creative</td></tr>
+            <tr><td>-ous</td><td>dangerous, famous</td></tr>
+            <tr><td>-ful</td><td>beautiful, careful</td></tr>
+            <tr><td>-less</td><td>useless, careless</td></tr>
+            <tr><td>-ic</td><td>economic, historic</td></tr>
+            <tr><td>-ical</td><td>logical, practical</td></tr>
+            <tr><td>-ary / -ory</td><td>primary, mandatory</td></tr>
+            <tr><td>-ent / -ant</td><td>different, important</td></tr>
+            <tr><td>-ed</td><td>experienced, tired</td></tr>
+            <tr><td>-ing</td><td>interesting, boring</td></tr>
+          </table>
         </article>
         <article class="cheat-card adverb">
-          <h3>Adverb (副詞 📦)</h3>
-          <p>-ly, -ward, -wise</p>
-          <small>e.g., quickly, forward</small>
+          <h3>Adverb 副詞</h3>
+          <table class="cheat-table">
+            <tr><td>-ly</td><td>quickly, carefully</td></tr>
+            <tr><td>-ward / -wards</td><td>forward, backwards</td></tr>
+            <tr><td>-wise</td><td>likewise, otherwise</td></tr>
+          </table>
+        </article>
+        <article class="cheat-card verb">
+          <h3>Verb 動詞</h3>
+          <table class="cheat-table">
+            <tr><td>-ize / -ise</td><td>realize, organize</td></tr>
+            <tr><td>-ify</td><td>identify, justify</td></tr>
+            <tr><td>-en</td><td>strengthen, widen</td></tr>
+            <tr><td>-ate</td><td>create, communicate</td></tr>
+          </table>
         </article>
       </div>
     </div>
