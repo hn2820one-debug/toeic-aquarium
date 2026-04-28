@@ -860,7 +860,7 @@ h2 {
 }
 
 /* Sandbox: tanks at bottom, tap-to-answer */
-.sandbox-mode .tanks-area {
+.tanks-area.sandbox-mode {
   top: auto;
   bottom: env(safe-area-inset-bottom, 0px);
   max-height: 44vh;
