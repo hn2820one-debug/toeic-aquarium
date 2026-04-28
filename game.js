@@ -379,6 +379,9 @@ class InputManager {
     if (this.game.state !== "PLAYING") {
       return;
     }
+    if (this.game.playMode === "sandbox") {
+      return;
+    }
     const p = this.getCanvasPos(e);
     const fish = this.game.getTopFishAtPoint(p.x, p.y);
     if (!fish || fish.snapping || fish.noDrag) {
@@ -2413,7 +2416,18 @@ class Game {
   }
 
   sandboxFishY() {
-    return this.bounds.playTop + (this.bounds.height - this.bounds.playTop) * 0.28;
+    let upper = this.bounds.playTop + 12;
+    let lower = this.bounds.height * 0.62;
+    if (this.tanksArea && !this.tanksArea.classList.contains("hidden")) {
+      const tr = this.tanksArea.getBoundingClientRect();
+      if (tr && Number.isFinite(tr.top)) {
+        lower = Math.min(lower, tr.top - 20);
+      }
+    }
+    if (lower <= upper + 40) {
+      return Math.min(this.bounds.height - 40, upper + 28);
+    }
+    return upper + (lower - upper) * 0.35;
   }
 
   getSandboxHintLevel(timeSec) {
