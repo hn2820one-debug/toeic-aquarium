@@ -1253,6 +1253,8 @@ class Game {
     this.tanksArea.classList.remove("hidden");
     this.tanks.forEach((tank) => tank.refreshRect());
     this.updateRecentLogTickerVisibility();
+    // Reposition tanks below the HUD now that both are visible.
+    this.resize();
   }
 
   startGame() {
