@@ -105,8 +105,11 @@ body {
 }
 
 .tank {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
   border-radius: 16px;
   font-weight: 800;
   letter-spacing: 0.4px;
@@ -117,6 +120,37 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.1), var(--shadow);
   text-transform: uppercase;
+  padding: 4px 6px;
+}
+
+.tank-name {
+  line-height: 1;
+}
+
+.tank-suffix-hint {
+  display: none;
+  font-size: clamp(0.48rem, 1.5vw, 0.64rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.88;
+  text-align: center;
+  line-height: 1.35;
+  word-break: break-word;
+  padding: 0 2px;
+}
+
+.sandbox-mode .tank-suffix-hint {
+  display: block;
+}
+
+.sandbox-mode .tank {
+  min-height: 72px;
+  padding: 6px 6px;
+}
+
+.sandbox-mode {
+  max-height: 46vh;
 }
 
 .tank-noun { box-shadow: inset 0 0 18px rgba(255, 80, 80, 0.35), 0 0 18px rgba(255, 80, 80, 0.3); }
@@ -736,6 +770,14 @@ h2 {
   .tank {
     min-height: 48px;
     font-size: clamp(0.65rem, 3.2vw, 0.88rem);
+  }
+
+  .sandbox-mode .tank {
+    min-height: 80px;
+  }
+
+  .sandbox-mode .tank-suffix-hint {
+    font-size: clamp(0.44rem, 1.9vw, 0.6rem);
   }
 
   .panel {

@@ -40,10 +40,22 @@
 
   <main id="game-root">
     <section id="tanks-area" class="tanks-area hidden" aria-label="Grammar tanks">
-      <div class="tank tank-noun" data-pos="Noun">Noun</div>
-      <div class="tank tank-verb" data-pos="Verb">Verb</div>
-      <div class="tank tank-adjective" data-pos="Adjective">Adjective</div>
-      <div class="tank tank-adverb" data-pos="Adverb">Adverb</div>
+      <div class="tank tank-noun" data-pos="Noun">
+        <span class="tank-name">Noun</span>
+        <span class="tank-suffix-hint">-tion · -sion · -ment · -ness · -ity · -ance · -ence · -er · -or · -ship · -ist · -ee · -age · -cy · -ure</span>
+      </div>
+      <div class="tank tank-verb" data-pos="Verb">
+        <span class="tank-name">Verb</span>
+        <span class="tank-suffix-hint">-ize · -ise · -ify · -ate · -en</span>
+      </div>
+      <div class="tank tank-adjective" data-pos="Adjective">
+        <span class="tank-name">Adjective</span>
+        <span class="tank-suffix-hint">-able · -ible · -ive · -ous · -ful · -less · -al · -ic · -ical · -ary · -ent · -ed · -ing</span>
+      </div>
+      <div class="tank tank-adverb" data-pos="Adverb">
+        <span class="tank-name">Adverb</span>
+        <span class="tank-suffix-hint">-ly · -ward · -wards · -wise</span>
+      </div>
     </section>
     <canvas id="game-canvas" aria-label="Deep Sea Word Aquarium Canvas"></canvas>
     <div id="recent-log-ticker" class="recent-log-ticker hidden" aria-live="polite" aria-label="Recent sorting log"></div>
@@ -59,6 +71,7 @@
         <label class="mode-label"><input type="radio" name="play-mode" value="zen" checked /> Zen 禪修（30 題・無限時・無連擊）</label>
         <label class="mode-label"><input type="radio" name="play-mode" value="timeattack" /> Time Attack 限時（計分・連擊・10 魚補位）</label>
         <label class="mode-label"><input type="radio" name="play-mode" value="static" /> Static Mode 單字訓練（30 題・一次一魚・自適應頻率）</label>
+        <label class="mode-label"><input type="radio" name="play-mode" value="sandbox" /> Sandbox 沙盒練習（無限・含字尾提示・不計入記錄）</label>
       </fieldset>
       <div class="panel-actions">
         <button id="start-btn" class="btn">Start Game</button>
@@ -79,6 +92,7 @@
         <label class="mode-label"><input type="radio" name="settings-play-mode" value="zen" checked /> Zen（固定 30 題・無限時）</label>
         <label class="mode-label"><input type="radio" name="settings-play-mode" value="timeattack" /> Time Attack（無限補魚・連擊計分）</label>
         <label class="mode-label"><input type="radio" name="settings-play-mode" value="static" /> Static（30 題・一次一魚・自適應）</label>
+        <label class="mode-label"><input type="radio" name="settings-play-mode" value="sandbox" /> Sandbox（無限補魚・字尾提示・不計錄）</label>
       </fieldset>
       <label id="settings-ta-time-row" class="setting-row" for="settings-ta-time-limit">
         <span>Time Attack 時間（秒）</span>

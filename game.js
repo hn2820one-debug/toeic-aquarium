@@ -20,6 +20,7 @@ const HISTORY_MAX = 50;
 const LEARNING_HISTORY_MAX = 50;
 const ZEN_FIXED_WORDS = 30;
 const STATIC_MODE_WORDS = 30;
+const SANDBOX_FISH_COUNT = 5;
 const TIME_ATTACK_FISH_COUNT = 10;
 const COMBO_WINDOW_SEC = 3;
 const SCORE_CORRECT_BASE = 10;
@@ -506,7 +507,7 @@ class Game {
     if (this.settings.pronunciationEnabled == null) {
       this.settings.pronunciationEnabled = true;
     }
-    if (this.settings.playMode !== "zen" && this.settings.playMode !== "timeattack" && this.settings.playMode !== "static") {
+    if (!["zen", "timeattack", "static", "sandbox"].includes(this.settings.playMode)) {
       this.settings.playMode = "zen";
     }
     this.settings.timeAttackDurationSec = clampTaTimeLimitSec(this.settings.timeAttackDurationSec);
@@ -656,7 +657,7 @@ class Game {
         fullscreen: typeof p.fullscreen === "boolean" ? p.fullscreen : undefined,
         difficulty: typeof p.difficulty === "string" ? p.difficulty : undefined,
         wordsPerRound: p.wordsPerRound != null ? clampWordsPerRound(p.wordsPerRound) : undefined,
-        playMode: ["zen", "timeattack", "static"].includes(p.playMode) ? p.playMode : undefined,
+        playMode: ["zen", "timeattack", "static", "sandbox"].includes(p.playMode) ? p.playMode : undefined,
         timeAttackDurationSec: p.timeAttackDurationSec != null ? clampTaTimeLimitSec(p.timeAttackDurationSec) : undefined,
         fishSpeedScale: p.fishSpeedScale != null ? clampFishSpeedScale(p.fishSpeedScale) : undefined,
         pronunciationEnabled: typeof p.pronunciationEnabled === "boolean" ? p.pronunciationEnabled : undefined
@@ -672,7 +673,7 @@ class Game {
       fullscreen: this.settings.fullscreen,
       difficulty: this.settings.difficulty,
       wordsPerRound: clampWordsPerRound(this.settings.wordsPerRound),
-      playMode: ["zen", "timeattack", "static"].includes(this.settings.playMode) ? this.settings.playMode : "zen",
+      playMode: ["zen", "timeattack", "static", "sandbox"].includes(this.settings.playMode) ? this.settings.playMode : "zen",
       timeAttackDurationSec: clampTaTimeLimitSec(this.settings.timeAttackDurationSec),
       fishSpeedScale: clampFishSpeedScale(this.settings.fishSpeedScale),
       pronunciationEnabled: Boolean(this.settings.pronunciationEnabled)
@@ -1232,7 +1233,7 @@ class Game {
 
   getSelectedPlayMode() {
     const el = document.querySelector('input[name="play-mode"]:checked');
-    if (el && ["zen", "timeattack", "static"].includes(el.value)) return el.value;
+    if (el && ["zen", "timeattack", "static", "sandbox"].includes(el.value)) return el.value;
     return "zen";
   }
 
@@ -1266,6 +1267,8 @@ class Game {
       this.startTimeAttackGame();
     } else if (mode === "static") {
       this.startStaticGame();
+    } else if (mode === "sandbox") {
+      this.startSandboxGame();
     } else {
       this.startZenGame();
     }
@@ -1428,6 +1431,59 @@ class Game {
     this.fishes.push(fish);
   }
 
+  startSandboxGame() {
+    const sourcePool = this.applyDifficultyToWordPool();
+    if (sourcePool.length < 1) {
+      window.alert("符合難度與字長條件的單字不足。請調低難度或到單字庫新增詞條。");
+      return;
+    }
+
+    this.playMode = "sandbox";
+    this.score = 0;
+    this.comboCount = 0;
+    this.comboTimeLeft = 0;
+    this.scorePopups = [];
+    this.recentSortSamples = [];
+    this.sessionPool = sourcePool;
+    this.state = "PLAYING";
+    this.totalWords = 0;
+    this.timeLimitSec = 0;
+    this.sessionWords = [];
+    this.mistakes = {};
+    this.correctCount = 0;
+    this.wrongCount = 0;
+    this.startMs = performance.now();
+    this.accumulatedPauseMs = 0;
+    this.pauseStarted = 0;
+    this.elapsedMs = 0;
+    this.pauseReason = null;
+
+    this.fishes = [];
+    this.particles = [];
+    for (let i = 0; i < SANDBOX_FISH_COUNT; i += 1) {
+      this.spawnOneSandboxFish();
+    }
+
+    this.tanksArea.classList.add("sandbox-mode");
+    this.hudTaBlock.classList.add("hidden");
+    this.hideMenuAndShowGameSurface();
+    this.updateHud();
+  }
+
+  spawnOneSandboxFish() {
+    if (this.playMode !== "sandbox" || !this.sessionPool || this.sessionPool.length === 0) return;
+    const cfg = DIFFICULTY_CONFIG[this.settings.difficulty] || DIFFICULTY_CONFIG.normal;
+    const wordData = this.sessionPool[Math.floor(Math.random() * this.sessionPool.length)];
+    const speedMul = cfg.speedMultiplier * this.getFishSpeedMultiplier();
+    this.fishes.push(new Fish(wordData, this.bounds, speedMul));
+  }
+
+  ensureSandboxFishCount() {
+    while (this.playMode === "sandbox" && this.fishes.filter((f) => !f.removed && !f.correctionMode).length < SANDBOX_FISH_COUNT) {
+      this.spawnOneSandboxFish();
+    }
+  }
+
   pauseGame(reason) {
     if (this.state !== "PLAYING") {
       return;
@@ -1461,8 +1517,10 @@ class Game {
     if (this.state !== "PLAYING" && this.state !== "PAUSED") {
       return;
     }
-    if (!window.confirm("確定要退出並返回主畫面？本局將不會寫入戰績結算。")) {
-      return;
+    if (this.playMode !== "sandbox") {
+      if (!window.confirm("確定要退出並返回主畫面？本局將不會寫入戰績結算。")) {
+        return;
+      }
     }
     this.pauseStarted = 0;
     this.pauseReason = null;
@@ -1502,6 +1560,7 @@ class Game {
     this.hud.classList.add("hidden");
     this.helpBtn.classList.add("hidden");
     this.tanksArea.classList.add("hidden");
+    this.tanksArea.classList.remove("sandbox-mode");
     this.gameoverOverlay.classList.add("hidden");
     this.gameoverOverlay.classList.remove("active");
     this.pauseOverlay.classList.add("hidden");
@@ -1557,7 +1616,7 @@ class Game {
     this.settings.difficulty = this.difficultySelect.value;
     this.settings.wordsPerRound = clampWordsPerRound(this.wordsPerRoundInput.value);
     const settingsModeEl = document.querySelector('input[name="settings-play-mode"]:checked');
-    if (settingsModeEl && ["zen", "timeattack", "static"].includes(settingsModeEl.value)) {
+    if (settingsModeEl && ["zen", "timeattack", "static", "sandbox"].includes(settingsModeEl.value)) {
       this.settings.playMode = settingsModeEl.value;
     }
     if (this.settingsTaTimeLimit) {
@@ -1623,7 +1682,7 @@ class Game {
 
   syncMainMenuPlayModeFromSettings() {
     const mode = this.settings.playMode;
-    ["zen", "timeattack", "static"].forEach((v) => {
+    ["zen", "timeattack", "static", "sandbox"].forEach((v) => {
       const radio = document.querySelector(`input[name="play-mode"][value="${v}"]`);
       if (radio) radio.checked = v === mode;
     });
@@ -1894,14 +1953,16 @@ class Game {
     this.playBuzz();
     this.emitParticles(fish.x, fish.y, false);
     this.wrongDropImmediateScoring(fish);
-    this.updateWordStat(fish.word, false);
-    this.appendLearningHistoryEntry({
-      word: fish.word,
-      playerChoice: String(playerChoiceTankName || ""),
-      correctPOS: fish.pos,
-      isCorrect: false,
-      timestamp: Date.now()
-    });
+    if (this.playMode !== "sandbox") {
+      this.updateWordStat(fish.word, false);
+      this.appendLearningHistoryEntry({
+        word: fish.word,
+        playerChoice: String(playerChoiceTankName || ""),
+        correctPOS: fish.pos,
+        isCorrect: false,
+        timestamp: Date.now()
+      });
+    }
     fish.noDrag = true;
     fish.errorState = true;
     fish.dragging = false;
@@ -1931,6 +1992,10 @@ class Game {
     this.fishes = this.fishes.filter((f) => f !== fish);
     if (this.playMode === "timeattack") {
       this.ensureTimeAttackFishCount();
+      return;
+    }
+    if (this.playMode === "sandbox") {
+      this.ensureSandboxFishCount();
       return;
     }
     if (this.playMode === "static") {
@@ -2011,14 +2076,16 @@ class Game {
       return;
     }
     this.playDing();
-    this.updateWordStat(fish.word, true);
-    this.appendLearningHistoryEntry({
-      word: fish.word,
-      playerChoice: tank.name,
-      correctPOS: fish.pos,
-      isCorrect: true,
-      timestamp: Date.now()
-    });
+    if (this.playMode !== "sandbox") {
+      this.updateWordStat(fish.word, true);
+      this.appendLearningHistoryEntry({
+        word: fish.word,
+        playerChoice: tank.name,
+        correctPOS: fish.pos,
+        isCorrect: true,
+        timestamp: Date.now()
+      });
+    }
     fish.removed = true;
 
     if (this.playMode === "timeattack") {
@@ -2035,6 +2102,15 @@ class Game {
       this.ensureTimeAttackFishCount();
       this.updateComboHud({ pulse: true });
       this.updateHud();
+      return;
+    }
+
+    if (this.playMode === "sandbox") {
+      this.correctCount += 1;
+      this.emitParticles(fish.x, fish.y, true);
+      this.fishes = this.fishes.filter((f) => !f.removed);
+      this.updateHud();
+      this.ensureSandboxFishCount();
       return;
     }
 
@@ -2185,7 +2261,11 @@ class Game {
     this.hudTime.textContent = this.formatTime(this.getElapsedMs());
     const attempts = this.correctCount + this.wrongCount;
     const accuracy = attempts === 0 ? 100 : Math.round((this.correctCount / attempts) * 100);
-    this.hudProgress.textContent = `${attempts}/${this.totalWords}`;
+    if (this.playMode === "sandbox") {
+      this.hudProgress.textContent = `${attempts} 已排`;
+    } else {
+      this.hudProgress.textContent = `${attempts}/${this.totalWords}`;
+    }
     this.hudAccuracy.textContent = `${accuracy}%`;
   }
 
