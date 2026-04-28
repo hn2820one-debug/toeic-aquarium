@@ -1472,13 +1472,7 @@ class Game {
     this.hideMenuAndShowGameSurface();
     this.updateHud();
 
-    // Show tanks first; spawn the first fish after 2 s so the player can
-    // read the suffix hints before play begins.
-    setTimeout(() => {
-      if (this.state === "PLAYING" && this.playMode === "sandbox") {
-        this.spawnOneSandboxFish();
-      }
-    }, 2000);
+    this.spawnOneSandboxFish();
   }
 
   spawnOneSandboxFish() {
