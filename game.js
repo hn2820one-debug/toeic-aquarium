@@ -20,7 +20,7 @@ const HISTORY_MAX = 50;
 const LEARNING_HISTORY_MAX = 50;
 const ZEN_FIXED_WORDS = 30;
 const STATIC_MODE_WORDS = 30;
-const SANDBOX_FISH_COUNT = 5;
+const SANDBOX_FISH_COUNT = 1;
 const TIME_ATTACK_FISH_COUNT = 10;
 const COMBO_WINDOW_SEC = 3;
 const SCORE_CORRECT_BASE = 10;
@@ -1460,11 +1460,12 @@ class Game {
     this.elapsedMs = 0;
     this.pauseReason = null;
 
+    this.sandboxHintTimer = null;
+    this.sandboxHintTank = null;
+
     this.fishes = [];
     this.particles = [];
-    for (let i = 0; i < SANDBOX_FISH_COUNT; i += 1) {
-      this.spawnOneSandboxFish();
-    }
+    this.spawnOneSandboxFish();
 
     this.tanksArea.classList.add("sandbox-mode");
     this.hudTaBlock.classList.add("hidden");
@@ -1478,10 +1479,33 @@ class Game {
     const wordData = this.sessionPool[Math.floor(Math.random() * this.sessionPool.length)];
     const speedMul = cfg.speedMultiplier * this.getFishSpeedMultiplier();
     this.fishes.push(new Fish(wordData, this.bounds, speedMul));
+
+    // After 2 s, glow the correct tank as a hint.
+    this.clearSandboxHint();
+    this.sandboxHintTimer = setTimeout(() => {
+      if (this.state !== "PLAYING" || this.playMode !== "sandbox") return;
+      const tank = this.tanks.find((t) => t.name === wordData.pos);
+      if (tank) {
+        tank.element.classList.add("sandbox-hint");
+        this.sandboxHintTank = tank;
+      }
+    }, 2000);
+  }
+
+  clearSandboxHint() {
+    if (this.sandboxHintTimer) {
+      clearTimeout(this.sandboxHintTimer);
+      this.sandboxHintTimer = null;
+    }
+    if (this.sandboxHintTank) {
+      this.sandboxHintTank.element.classList.remove("sandbox-hint");
+      this.sandboxHintTank = null;
+    }
   }
 
   ensureSandboxFishCount() {
-    while (this.playMode === "sandbox" && this.fishes.filter((f) => !f.removed && !f.correctionMode).length < SANDBOX_FISH_COUNT) {
+    const active = this.fishes.filter((f) => !f.removed && !f.correctionMode).length;
+    if (this.playMode === "sandbox" && active < SANDBOX_FISH_COUNT) {
       this.spawnOneSandboxFish();
     }
   }
@@ -1561,6 +1585,7 @@ class Game {
     this.hudTaBlock.classList.add("hidden");
     this.hud.classList.add("hidden");
     this.helpBtn.classList.add("hidden");
+    this.clearSandboxHint();
     this.tanksArea.classList.add("hidden");
     this.tanksArea.classList.remove("sandbox-mode");
     this.gameoverOverlay.classList.add("hidden");
@@ -1955,6 +1980,7 @@ class Game {
     this.playBuzz();
     this.emitParticles(fish.x, fish.y, false);
     this.wrongDropImmediateScoring(fish);
+    this.clearSandboxHint();
     if (this.playMode !== "sandbox") {
       this.updateWordStat(fish.word, false);
       this.appendLearningHistoryEntry({
@@ -2108,6 +2134,7 @@ class Game {
     }
 
     if (this.playMode === "sandbox") {
+      this.clearSandboxHint();
       this.correctCount += 1;
       this.emitParticles(fish.x, fish.y, true);
       this.fishes = this.fishes.filter((f) => !f.removed);
