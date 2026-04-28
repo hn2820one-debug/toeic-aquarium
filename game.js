@@ -931,6 +931,9 @@ class Game {
     if (this.historyLearningClearBtn) {
       this.historyLearningClearBtn.addEventListener("click", () => this.clearLearningHistoryProgress());
     }
+    this.tanks.forEach((tank) => {
+      tank.element.addEventListener("click", () => this.onSandboxTankClick(tank));
+    });
     document.getElementById("sandbox-log-btn").addEventListener("click", () => this.openSandboxLogOverlay());
     if (this.sandboxLogCloseBtn) {
       this.sandboxLogCloseBtn.addEventListener("click", () => this.closeSandboxLogOverlay());
@@ -1219,23 +1222,37 @@ class Game {
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     if (this.tanksArea && !this.tanksArea.classList.contains("hidden")) {
-      let tanksTop = 8;
-      if (this.hud && !this.hud.classList.contains("hidden")) {
-        const hudRect = this.hud.getBoundingClientRect();
-        if (hudRect && Number.isFinite(hudRect.bottom)) {
-          tanksTop = Math.max(6, Math.floor(hudRect.bottom + 8));
+      if (this.playMode === "sandbox") {
+        this.tanksArea.style.top = "";  // CSS handles bottom positioning
+      } else {
+        let tanksTop = 8;
+        if (this.hud && !this.hud.classList.contains("hidden")) {
+          const hudRect = this.hud.getBoundingClientRect();
+          if (hudRect && Number.isFinite(hudRect.bottom)) {
+            tanksTop = Math.max(6, Math.floor(hudRect.bottom + 8));
+          }
         }
+        this.tanksArea.style.top = `${tanksTop}px`;
       }
-      this.tanksArea.style.top = `${tanksTop}px`;
     } else if (this.tanksArea) {
       this.tanksArea.style.top = "";
     }
 
     let playTop = cssH * 0.3 + 8;
     if (this.tanksArea && !this.tanksArea.classList.contains("hidden")) {
-      const tr = this.tanksArea.getBoundingClientRect();
-      if (tr.height > 0) {
-        playTop = Math.min(cssH * 0.62, Math.max(96, tr.bottom + 10));
+      if (this.playMode === "sandbox") {
+        // Tanks are at bottom; playTop = just below HUD
+        let hudBottom = 60;
+        if (this.hud && !this.hud.classList.contains("hidden")) {
+          const hudRect = this.hud.getBoundingClientRect();
+          if (hudRect && Number.isFinite(hudRect.bottom)) hudBottom = hudRect.bottom + 8;
+        }
+        playTop = Math.max(60, hudBottom);
+      } else {
+        const tr = this.tanksArea.getBoundingClientRect();
+        if (tr.height > 0) {
+          playTop = Math.min(cssH * 0.62, Math.max(96, tr.bottom + 10));
+        }
       }
     }
     this.bounds = {
@@ -1506,7 +1523,7 @@ class Game {
     const wordData = this.sessionPool[Math.floor(Math.random() * this.sessionPool.length)];
     const fish = new Fish(wordData, this.bounds, 0);
     fish.x = this.bounds.width / 2;
-    fish.y = (this.bounds.playTop + this.bounds.height) / 2;
+    fish.y = this.sandboxFishY();
     fish.vx = 0;
     fish.vy = 0;
     fish.spawnTime = performance.now();
@@ -1979,7 +1996,7 @@ class Game {
       fish.dragging = false;
       fish.snapping = true;
       fish.snapTargetX = this.bounds.width / 2;
-      fish.snapTargetY = (this.bounds.playTop + this.bounds.height) / 2;
+      fish.snapTargetY = this.playMode === "sandbox" ? this.sandboxFishY() : (this.bounds.playTop + this.bounds.height) / 2;
       setTimeout(() => {
         if (!fish.removed && !fish.correctionMode) {
           fish.snapping = false;
@@ -2382,6 +2399,21 @@ class Game {
     this.scorePopups = this.scorePopups.filter((p) => p.life > 0);
     this.particles.forEach((p) => p.update(dt));
     this.particles = this.particles.filter((p) => p.life > 0);
+  }
+
+  onSandboxTankClick(tank) {
+    if (this.state !== "PLAYING" || this.playMode !== "sandbox") return;
+    const fish = this.fishes.find((f) => !f.removed && !f.correctionMode && !f.noDrag && !f.dragging);
+    if (!fish) return;
+    if (tank.name !== fish.pos) {
+      this.applyWrongDropImmediate(fish, tank.name);
+    } else {
+      this.resolveFishInTankCorrect(fish, tank);
+    }
+  }
+
+  sandboxFishY() {
+    return this.bounds.playTop + (this.bounds.height - this.bounds.playTop) * 0.28;
   }
 
   getSandboxHintLevel(timeSec) {
