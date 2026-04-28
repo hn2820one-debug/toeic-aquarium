@@ -858,3 +858,8 @@ h2 {
     max-width: 120px;
   }
 }
+
+.sandbox-log-table tr.log-correct td { background: rgba(0, 200, 100, 0.12); }
+.sandbox-log-table tr.log-wrong td { background: rgba(255, 80, 80, 0.12); }
+.sandbox-log-table tr.log-confident-error td { background: rgba(255, 160, 0, 0.2); }
+#sandbox-log-count { font-size: 0.8rem; color: #a0b4c8; margin-left: auto; }

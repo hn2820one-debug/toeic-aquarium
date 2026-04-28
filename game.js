@@ -10,7 +10,8 @@ const STORAGE_KEYS = {
   stats: "deepsea_word_aquarium_stats",
   history: "deepsea_word_aquarium_history",
   learningHistory: "deepsea_word_aquarium_learning_history",
-  wordStats: "deepsea_word_aquarium_word_stats"
+  wordStats: "deepsea_word_aquarium_word_stats",
+  sandboxLog: "deepsea_word_aquarium_sandbox_log"
 };
 
 const VALID_POS = new Set(["Noun", "Verb", "Adjective", "Adverb"]);
@@ -484,6 +485,14 @@ class Game {
     this.historyLearningClearBtn = document.getElementById("history-learning-clear-btn");
     this.recentLogTicker = document.getElementById("recent-log-ticker");
 
+    this.sandboxLogOverlay = document.getElementById("sandbox-log-overlay");
+    this.sandboxLogCloseBtn = document.getElementById("sandbox-log-close-btn");
+    this.sandboxLogTbody = document.getElementById("sandbox-log-tbody");
+    this.sandboxLogClearBtn = document.getElementById("sandbox-log-clear-btn");
+    this.sandboxLogExportJsonBtn = document.getElementById("sandbox-log-export-json-btn");
+    this.sandboxLogExportCsvBtn = document.getElementById("sandbox-log-export-csv-btn");
+    this.sandboxLogCount = document.getElementById("sandbox-log-count");
+
     this.tanks = [...document.querySelectorAll(".tank")].map((el) => new Tank(el.dataset.pos, el));
     this.input = new InputManager(this, this.canvas);
 
@@ -922,6 +931,19 @@ class Game {
     if (this.historyLearningClearBtn) {
       this.historyLearningClearBtn.addEventListener("click", () => this.clearLearningHistoryProgress());
     }
+    document.getElementById("sandbox-log-btn").addEventListener("click", () => this.openSandboxLogOverlay());
+    if (this.sandboxLogCloseBtn) {
+      this.sandboxLogCloseBtn.addEventListener("click", () => this.closeSandboxLogOverlay());
+    }
+    if (this.sandboxLogClearBtn) {
+      this.sandboxLogClearBtn.addEventListener("click", () => this.clearSandboxLogData());
+    }
+    if (this.sandboxLogExportJsonBtn) {
+      this.sandboxLogExportJsonBtn.addEventListener("click", () => this.exportSandboxLogJson());
+    }
+    if (this.sandboxLogExportCsvBtn) {
+      this.sandboxLogExportCsvBtn.addEventListener("click", () => this.exportSandboxLogCsv());
+    }
 
     this.wordbankFilter.addEventListener("input", () => this.renderWordbankTable());
     this.wordbankForm.addEventListener("submit", (e) => this.onWordbankFormSubmit(e));
@@ -968,6 +990,10 @@ class Game {
         }
         if (this.historyLearningOverlay && this.historyLearningOverlay.classList.contains("active")) {
           this.closeHistoryLearningOverlay();
+          return;
+        }
+        if (this.sandboxLogOverlay && this.sandboxLogOverlay.classList.contains("active")) {
+          this.closeSandboxLogOverlay();
           return;
         }
         if (this.state === "PLAYING") {
@@ -1483,6 +1509,7 @@ class Game {
     fish.y = (this.bounds.playTop + this.bounds.height) / 2;
     fish.vx = 0;
     fish.vy = 0;
+    fish.spawnTime = performance.now();
     this.fishes.push(fish);
 
     this.clearSandboxHint();
@@ -2007,6 +2034,8 @@ class Game {
         isCorrect: false,
         timestamp: Date.now()
       });
+    } else {
+      this.appendSandboxLogEntry(fish, playerChoiceTankName, false);
     }
     fish.noDrag = true;
     fish.errorState = true;
@@ -2151,6 +2180,7 @@ class Game {
     }
 
     if (this.playMode === "sandbox") {
+      this.appendSandboxLogEntry(fish, tank.name, true);
       this.clearSandboxHint();
       this.correctCount += 1;
       this.emitParticles(fish.x, fish.y, true);
@@ -2352,6 +2382,117 @@ class Game {
     this.scorePopups = this.scorePopups.filter((p) => p.life > 0);
     this.particles.forEach((p) => p.update(dt));
     this.particles = this.particles.filter((p) => p.life > 0);
+  }
+
+  getSandboxHintLevel(timeSec) {
+    if (timeSec < 2) return 0;
+    if (timeSec < 5) return 1;
+    return 3;
+  }
+
+  loadSandboxLog() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.sandboxLog);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  saveSandboxLog(log) {
+    try {
+      localStorage.setItem(STORAGE_KEYS.sandboxLog, JSON.stringify(log));
+    } catch {}
+  }
+
+  appendSandboxLogEntry(fish, playerChoice, isCorrect) {
+    const now = performance.now();
+    const timeSec = Math.round(((now - (fish.spawnTime || now)) / 1000) * 10) / 10;
+    const hintLevel = this.getSandboxHintLevel(timeSec);
+    const isConfidentError = !isCorrect && timeSec < 2;
+    const entry = {
+      word: fish.word,
+      pos: fish.pos,
+      playerChoice: String(playerChoice || ""),
+      isCorrect,
+      timeSec,
+      hintLevel,
+      isConfidentError,
+      timestamp: Date.now()
+    };
+    const log = this.loadSandboxLog();
+    log.push(entry);
+    this.saveSandboxLog(log);
+  }
+
+  openSandboxLogOverlay() {
+    if (!this.sandboxLogOverlay) return;
+    this.sandboxLogOverlay.classList.remove("hidden");
+    this.sandboxLogOverlay.classList.add("active");
+    this.renderSandboxLogTable();
+  }
+
+  closeSandboxLogOverlay() {
+    if (!this.sandboxLogOverlay) return;
+    this.sandboxLogOverlay.classList.add("hidden");
+    this.sandboxLogOverlay.classList.remove("active");
+  }
+
+  renderSandboxLogTable() {
+    if (!this.sandboxLogTbody) return;
+    const log = this.loadSandboxLog();
+    this.sandboxLogTbody.innerHTML = "";
+    [...log].reverse().forEach((entry) => {
+      const tr = document.createElement("tr");
+      const hintLabel = ["No hint", "Suffix", "—", "Glow"][entry.hintLevel] ?? String(entry.hintLevel);
+      const d = new Date(entry.timestamp);
+      const ts = `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+      tr.className = entry.isCorrect ? "log-correct" : entry.isConfidentError ? "log-confident-error" : "log-wrong";
+      tr.innerHTML = `
+        <td>${this.escapeHtml(entry.word)}</td>
+        <td>${this.escapeHtml(entry.pos)}</td>
+        <td>${this.escapeHtml(entry.playerChoice)}</td>
+        <td>${entry.isCorrect ? "✓" : "✗"}</td>
+        <td>${entry.timeSec}s</td>
+        <td>${hintLabel}</td>
+        <td>${entry.isConfidentError ? "⚠" : ""}</td>
+        <td>${ts}</td>`;
+      this.sandboxLogTbody.appendChild(tr);
+    });
+    if (this.sandboxLogCount) {
+      this.sandboxLogCount.textContent = `共 ${log.length} 筆記錄`;
+    }
+  }
+
+  exportSandboxLogJson() {
+    const log = this.loadSandboxLog();
+    const blob = new Blob([JSON.stringify(log, null, 2)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `sandbox_log_${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  exportSandboxLogCsv() {
+    const log = this.loadSandboxLog();
+    const header = "word,pos,playerChoice,isCorrect,timeSec,hintLevel,isConfidentError,timestamp";
+    const rows = log.map((e) =>
+      [e.word, e.pos, e.playerChoice, e.isCorrect, e.timeSec, e.hintLevel, e.isConfidentError, e.timestamp].join(",")
+    );
+    const csv = [header, ...rows].join("\n");
+    const blob = new Blob([csv], { type: "text/csv" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `sandbox_log_${Date.now()}.csv`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  clearSandboxLogData() {
+    if (!confirm("確定清空所有沙盒記錄？此操作無法復原。")) return;
+    this.saveSandboxLog([]);
+    this.renderSandboxLogTable();
   }
 
   draw() {

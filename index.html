@@ -79,6 +79,7 @@
         <button id="wordbank-btn" class="btn btn-ghost">單字庫 📚</button>
         <button id="records-btn" class="btn btn-ghost">戰績 📊</button>
         <button id="history-learning-btn" type="button" class="btn btn-ghost">History 📜</button>
+        <button id="sandbox-log-btn" type="button" class="btn btn-ghost">Sandbox Log 📋</button>
         <button id="menu-settings-btn" class="btn btn-ghost">Settings</button>
       </div>
     </div>
@@ -222,6 +223,39 @@
             </tr>
           </thead>
           <tbody id="records-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="sandbox-log-overlay" class="overlay hidden">
+    <div class="panel panel-wide panel-scroll">
+      <div class="panel-top">
+        <h2>Sandbox Log 📋</h2>
+        <button id="sandbox-log-close-btn" type="button" class="btn btn-ghost btn-small">Close ✖</button>
+      </div>
+      <p class="panel-hint">沙盒模式排序記錄（本機 localStorage）。hintLevel: 0=無提示, 1=字尾可見, 3=發亮提示。⚠ = 自信錯誤（&lt;2s 拉錯）。</p>
+      <div class="toolbar">
+        <button id="sandbox-log-export-json-btn" type="button" class="btn btn-small">匯出 JSON</button>
+        <button id="sandbox-log-export-csv-btn" type="button" class="btn btn-small">匯出 CSV</button>
+        <button id="sandbox-log-clear-btn" type="button" class="btn btn-ghost btn-small">清空記錄</button>
+        <span id="sandbox-log-count" class="panel-hint"></span>
+      </div>
+      <div class="wordbank-table-wrap">
+        <table class="wordbank-table sandbox-log-table">
+          <thead>
+            <tr>
+              <th>單字</th>
+              <th>正確詞性</th>
+              <th>你的選擇</th>
+              <th>結果</th>
+              <th>用時</th>
+              <th>提示級別</th>
+              <th>自信錯誤</th>
+              <th>時間</th>
+            </tr>
+          </thead>
+          <tbody id="sandbox-log-tbody"></tbody>
         </table>
       </div>
     </div>
