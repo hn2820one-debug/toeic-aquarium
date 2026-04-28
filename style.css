@@ -140,7 +140,7 @@ body {
   padding: 0 4px;
 }
 
-.sandbox-mode .tank-suffix-hint {
+.sandbox-mode.hints-visible .tank-suffix-hint {
   display: block;
 }
 
@@ -793,7 +793,7 @@ h2 {
     min-height: 100px;
   }
 
-  .sandbox-mode .tank-suffix-hint {
+  .sandbox-mode.hints-visible .tank-suffix-hint {
     font-size: clamp(0.46rem, 2vw, 0.62rem);
   }
 

@@ -1461,6 +1461,7 @@ class Game {
     this.pauseReason = null;
 
     this.sandboxHintTimer = null;
+    this.sandboxSuffixTimer = null;
     this.sandboxHintTank = null;
 
     this.fishes = [];
@@ -1490,8 +1491,15 @@ class Game {
     fish.vy = 0;
     this.fishes.push(fish);
 
-    // After 5 s, glow the correct tank as a hint.
     this.clearSandboxHint();
+
+    // t+2 s: reveal suffix hints on all tanks.
+    this.sandboxSuffixTimer = setTimeout(() => {
+      if (this.state !== "PLAYING" || this.playMode !== "sandbox") return;
+      this.tanksArea.classList.add("hints-visible");
+    }, 2000);
+
+    // t+5 s: glow the correct tank.
     this.sandboxHintTimer = setTimeout(() => {
       if (this.state !== "PLAYING" || this.playMode !== "sandbox") return;
       const tank = this.tanks.find((t) => t.name === wordData.pos);
@@ -1507,10 +1515,15 @@ class Game {
       clearTimeout(this.sandboxHintTimer);
       this.sandboxHintTimer = null;
     }
+    if (this.sandboxSuffixTimer) {
+      clearTimeout(this.sandboxSuffixTimer);
+      this.sandboxSuffixTimer = null;
+    }
     if (this.sandboxHintTank) {
       this.sandboxHintTank.element.classList.remove("sandbox-hint");
       this.sandboxHintTank = null;
     }
+    this.tanksArea.classList.remove("hints-visible");
   }
 
   ensureSandboxFishCount() {
