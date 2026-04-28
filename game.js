@@ -1465,22 +1465,32 @@ class Game {
 
     this.fishes = [];
     this.particles = [];
-    this.spawnOneSandboxFish();
 
     this.tanksArea.classList.add("sandbox-mode");
     this.hudTaBlock.classList.add("hidden");
     this.hideMenuAndShowGameSurface();
     this.updateHud();
+
+    // Show tanks first; spawn the first fish after 2 s so the player can
+    // read the suffix hints before play begins.
+    setTimeout(() => {
+      if (this.state === "PLAYING" && this.playMode === "sandbox") {
+        this.spawnOneSandboxFish();
+      }
+    }, 2000);
   }
 
   spawnOneSandboxFish() {
     if (this.playMode !== "sandbox" || !this.sessionPool || this.sessionPool.length === 0) return;
-    const cfg = DIFFICULTY_CONFIG[this.settings.difficulty] || DIFFICULTY_CONFIG.normal;
     const wordData = this.sessionPool[Math.floor(Math.random() * this.sessionPool.length)];
-    const speedMul = cfg.speedMultiplier * this.getFishSpeedMultiplier();
-    this.fishes.push(new Fish(wordData, this.bounds, speedMul));
+    const fish = new Fish(wordData, this.bounds, 0);
+    fish.x = this.bounds.width / 2;
+    fish.y = (this.bounds.playTop + this.bounds.height) / 2;
+    fish.vx = 0;
+    fish.vy = 0;
+    this.fishes.push(fish);
 
-    // After 2 s, glow the correct tank as a hint.
+    // After 5 s, glow the correct tank as a hint.
     this.clearSandboxHint();
     this.sandboxHintTimer = setTimeout(() => {
       if (this.state !== "PLAYING" || this.playMode !== "sandbox") return;
@@ -1489,7 +1499,7 @@ class Game {
         tank.element.classList.add("sandbox-hint");
         this.sandboxHintTank = tank;
       }
-    }, 2000);
+    }, 5000);
   }
 
   clearSandboxHint() {
@@ -1931,7 +1941,7 @@ class Game {
   }
 
   cancelFishDropOutsideTanks(fish) {
-    if (this.playMode === "static") {
+    if (this.playMode === "static" || this.playMode === "sandbox") {
       fish.dragging = false;
       fish.snapping = true;
       fish.snapTargetX = this.bounds.width / 2;
